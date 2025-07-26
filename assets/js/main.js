@@ -66,22 +66,72 @@ function createWorkflowAnimation() {
     const workflowContainer = document.querySelector('.workflow-animation');
     if (!workflowContainer) return;
 
-    // Create a simple pulsing effect for now
-    setInterval(() => {
-        workflowContainer.classList.toggle('pulse');
-    }, 2000);
-
-    // Add hover effect to workflow elements
-    const workflowImage = workflowContainer.querySelector('img');
-    if (workflowImage) {
-        workflowImage.addEventListener('mouseover', function() {
-            this.style.filter = 'drop-shadow(0 0 10px var(--neon-blue))';
+    // Add click event listeners to workflow nodes
+    const workflowNodes = document.querySelectorAll('.workflow-node');
+    workflowNodes.forEach(node => {
+        node.addEventListener('click', function() {
+            const nodeId = this.id;
+            let nodeType = '';
+            
+            switch(nodeId) {
+                case 'workflow-input':
+                    nodeType = 'Input';
+                    break;
+                case 'workflow-agent':
+                    nodeType = 'AI Agent';
+                    break;
+                case 'workflow-model':
+                    nodeType = 'AI Model';
+                    break;
+                case 'workflow-tools':
+                    nodeType = 'AI Tools';
+                    break;
+                case 'workflow-output':
+                    nodeType = 'Output';
+                    break;
+                default:
+                    nodeType = 'Unknown Node';
+            }
+            
+            // You can customize this alert or replace with modal/tooltip
+            alert(`Clicked on: ${nodeType}\n\nThis node represents the ${nodeType.toLowerCase()} stage of our AI workflow.`);
         });
         
-        workflowImage.addEventListener('mouseout', function() {
-            this.style.filter = '';
+        // Add ripple effect on click
+        node.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const ripple = document.createElement('div');
+            const size = 50;
+            
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(80, 201, 242, 0.6)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple-effect 0.6s linear';
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            ripple.style.pointerEvents = 'none';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
         });
-    }
+    });
+
+    // Remove the pulsing effect since we want individual hover effects
+    // const workflowImage = workflowContainer.querySelector('img');
+    // if (workflowImage) {
+    //     workflowImage.addEventListener('mouseover', function() {
+    //         this.style.filter = 'drop-shadow(0 0 10px var(--neon-blue))';
+    //     });
+        
+    //     workflowImage.addEventListener('mouseout', function() {
+    //         this.style.filter = '';
+    //     });
+    // }
 }
 
 // Hero text glitch animation

@@ -398,6 +398,20 @@ body::before {
     .client-marquee-content {
         animation-duration: 15s;
     }
+    
+    /* Reorder hero section elements on mobile */
+    #hero .container > div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #hero .lg\:w-1\/2:first-child {
+        order: 2;
+    }
+    
+    #hero .lg\:w-1\/2:last-child {
+        order: 1;
+    }
 }
 
 /* Animations for Page Elements */
@@ -415,14 +429,55 @@ body::before {
     position: relative;
 }
 
-.workflow-animation::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(80, 201, 242, 0.2) 0%, rgba(140, 95, 255, 0.1) 50%, transparent 70%);
-    z-index: -1;
-    animation: pulse 4s infinite;
+/* Workflow Node Interactive Effects */
+.workflow-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.workflow-node:hover rect {
+    filter: drop-shadow(0 0 8px #50C9F2);
+    transform: scale(1.05);
+}
+
+.workflow-node:active {
+    transform: scale(0.95);
+}
+
+/* Individual node hover colors */
+#workflow-input:hover rect {
+    filter: drop-shadow(0 0 8px #50C9F2);
+}
+
+#workflow-agent:hover rect {
+    filter: drop-shadow(0 0 8px #8C5FFF);
+}
+
+#workflow-model:hover rect {
+    filter: drop-shadow(0 0 8px #00FFB2);
+}
+
+#workflow-tools:hover rect {
+    filter: drop-shadow(0 0 8px #8C5FFF);
+}
+
+#workflow-output:hover rect {
+    filter: drop-shadow(0 0 8px #50C9F2);
+}
+
+/* Ripple effect animation for workflow node clicks */
+@keyframes ripple-effect {
+    0% {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
+/* Efek pulsing telah dihapus sesuai permintaan */

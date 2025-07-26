@@ -68,24 +68,34 @@
   <!-- Workflow Nodes -->
   <g>
     <!-- Input Node -->
-    <rect x="40" y="70" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
-    <text x="80" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Input</text>
+    <g id="workflow-input" class="workflow-node">
+      <rect x="40" y="70" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)"/>
+      <text x="80" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Input</text>
+    </g>
     
     <!-- Processing Node -->
-    <rect x="200" y="170" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#glow)"/>
-    <text x="240" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Process</text>
+    <g id="workflow-agent" class="workflow-node">
+      <rect x="200" y="170" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)"/>
+      <text x="240" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Agent</text>
+    </g>
     
     <!-- AI Node 1 -->
-    <rect x="360" y="70" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)" filter="url(#glow)"/>
-    <text x="400" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Model</text>
+    <g id="workflow-model" class="workflow-node">
+      <rect x="360" y="70" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)"/>
+      <text x="400" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Model</text>
+    </g>
     
     <!-- AI Node 2 -->
-    <rect x="360" y="270" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#glow)"/>
-    <text x="400" y="305" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Analysis</text>
+    <g id="workflow-tools" class="workflow-node">
+      <rect x="360" y="270" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)"/>
+      <text x="400" y="305" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Tools</text>
+    </g>
     
     <!-- Output Node -->
-    <rect x="520" y="170" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
-    <text x="560" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Output</text>
+    <g id="workflow-output" class="workflow-node">
+      <rect x="520" y="170" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)"/>
+      <text x="560" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Output</text>
+    </g>
   </g>
   
   <!-- Animated Data Flow -->
@@ -116,26 +126,4 @@
     </circle>
   </g>
   
-  <!-- Pulsing Effect on Nodes -->
-  <g opacity="0.3">
-    <rect x="40" y="70" width="80" height="60" rx="8" ry="8" fill="#50C9F2">
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2s" repeatCount="indefinite"/>
-    </rect>
-    
-    <rect x="200" y="170" width="80" height="60" rx="8" ry="8" fill="#8C5FFF">
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
-    </rect>
-    
-    <rect x="360" y="70" width="80" height="60" rx="8" ry="8" fill="#00FFB2">
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2.5s" repeatCount="indefinite"/>
-    </rect>
-    
-    <rect x="360" y="270" width="80" height="60" rx="8" ry="8" fill="#8C5FFF">
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2.7s" repeatCount="indefinite"/>
-    </rect>
-    
-    <rect x="520" y="170" width="80" height="60" rx="8" ry="8" fill="#50C9F2">
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2.2s" repeatCount="indefinite"/>
-    </rect>
-  </g>
 </svg>
