@@ -264,7 +264,7 @@ html {
 .terminal-text::after {
     content: '|';
     position: absolute;
-    right: -10px;
+    right: 0;
     top: 0;
     color: var(--neon-blue);
     animation: blink-caret 0.75s step-end infinite;

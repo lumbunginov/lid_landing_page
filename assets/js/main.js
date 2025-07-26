@@ -91,11 +91,10 @@ function animateHeroText() {
 
     const firstText = "Solve Your Problem";
     const secondText = "More Efficiently";
-    let currentText = firstText;
-    let isGlitching = false;
+    let isAnimating = false;
 
-    // Initial text with terminal effect
-    heroText.textContent = firstText;
+    // Clear initial text
+    heroText.textContent = '';
     heroText.classList.add('terminal-text');
 
     // Function to create random glitch characters
@@ -113,7 +112,7 @@ function animateHeroText() {
         return result;
     }
 
-    // Function to simulate typing effect
+    // Function to simulate slow typing effect with visible caret at the end
     function typeText(text, callback) {
         let i = 0;
         heroText.textContent = '';
@@ -121,9 +120,10 @@ function animateHeroText() {
         
         function type() {
             if (i < text.length) {
-                heroText.textContent += text.charAt(i);
+                // Pastikan teks diupdate dengan cara yang mempertahankan posisi caret
+                heroText.textContent = text.substring(0, i+1);
                 i++;
-                setTimeout(type, 50); // Typing speed
+                setTimeout(type, 100); // Slower typing speed (100ms instead of 50ms)
             } else if (callback) {
                 callback();
             }
@@ -132,53 +132,60 @@ function animateHeroText() {
         type();
     }
 
-    // Start animation after 2 seconds
-    setTimeout(() => {
-        // Function to toggle between texts with glitch effect
-        function toggleText() {
-            if (isGlitching) return;
-            isGlitching = true;
+    // Function to perform glitch animation and switch to second text
+    function glitchToSecondText() {
+        if (isAnimating) return;
+        isAnimating = true;
 
-            // Remove terminal effect and add glitch effect
-            heroText.classList.remove('terminal-text');
-            heroText.classList.add('glitch-text');
-            heroText.setAttribute('data-text', currentText);
+        // Remove terminal effect and add glitch effect
+        heroText.classList.remove('terminal-text');
+        heroText.classList.add('glitch-text');
+        heroText.setAttribute('data-text', firstText);
 
-            // Glitch text rapidly a few times before changing
-            let glitchCount = 0;
-            const maxGlitches = 5;
-            const glitchInterval = setInterval(() => {
-                if (glitchCount < maxGlitches) {
-                    heroText.textContent = getRandomGlitchText(currentText);
-                    glitchCount++;
-                } else {
-                    clearInterval(glitchInterval);
+        // Glitch text rapidly a few times before changing
+        let glitchCount = 0;
+        const maxGlitches = 5;
+        const glitchInterval = setInterval(() => {
+            if (glitchCount < maxGlitches) {
+                heroText.textContent = getRandomGlitchText(firstText);
+                glitchCount++;
+            } else {
+                clearInterval(glitchInterval);
+                
+                // Change to second text
+                heroText.textContent = secondText;
+                heroText.setAttribute('data-text', secondText);
+                
+                // Continue glitching for a short time after text change
+                setTimeout(() => {
+                    // Remove glitch effect but keep text
+                    heroText.classList.remove('glitch-text');
+                    heroText.classList.add('terminal-text');
                     
-                    // Change to the other text
-                    currentText = currentText === firstText ? secondText : firstText;
-                    heroText.textContent = currentText;
-                    heroText.setAttribute('data-text', currentText);
-                    
-                    // Continue glitching for a short time after text change
+                    // Wait 3 seconds before starting cycle again
                     setTimeout(() => {
-                        // Remove glitch effect
-                        heroText.classList.remove('glitch-text');
-                        
-                        // Type the new text with terminal effect
-                        typeText(currentText, () => {
-                            isGlitching = false;
-                            
-                            // Schedule next toggle after longer delay
-                            setTimeout(toggleText, 5000);
-                        });
-                    }, 600); // Duration of final glitch after text change
-                }
-            }, 100); // Interval between glitches
-        }
+                        isAnimating = false;
+                        // Start cycle again with typing first text
+                        startCycle();
+                    }, 3000); // Wait 3 seconds with second text visible
+                }, 600); // Duration of final glitch after text change
+            }
+        }, 100); // Interval between glitches
+    }
 
-        // Start the toggle cycle
-        toggleText();
-    }, 2000); // Initial delay
+    // Function to start the animation cycle
+    function startCycle() {
+        // Type the first text slowly
+        typeText(firstText, () => {
+            // Wait 3 seconds after typing completes before glitching
+            setTimeout(() => {
+                glitchToSecondText();
+            }, 3000); // Wait 3 seconds with first text visible
+        });
+    }
+
+    // Start the animation cycle after a short delay
+    setTimeout(startCycle, 1000);
 }
 
 // Add scroll reveal animations
