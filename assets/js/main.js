@@ -182,9 +182,10 @@ function animateHeroText() {
                 
                 // Continue glitching for a short time after text change
                 setTimeout(() => {
-                    // Remove glitch effect but keep text
+                    // Remove glitch effect and add terminal effect with caret
                     heroText.classList.remove('glitch-text');
                     heroText.classList.add('terminal-text');
+                    heroText.textContent = secondText;
                     
                     // Wait 3 seconds before starting cycle again
                     setTimeout(() => {
