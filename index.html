@@ -230,20 +230,36 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
-                <!-- Portfolio Buttons with Dynamic Content -->
-                <div class="portfolio-button" id="portfolio-btn-1">
+                <!-- Portfolio Buttons with Dynamic Content (Mobile: 3 buttons with glitch animation) -->
+                <div class="portfolio-button mobile-portfolio" id="portfolio-btn-1">
                     <h3 class="portfolio-title" data-text="Website Desa Ngadipuro">Website Desa Ngadipuro</h3>
                     <p class="portfolio-desc">Platform digital untuk desa dengan layanan administrasi online dan komunikasi dengan masyarakat.</p>
                 </div>
                 
-                <div class="portfolio-button" id="portfolio-btn-2">
+                <div class="portfolio-button mobile-portfolio" id="portfolio-btn-2">
                     <h3 class="portfolio-title" data-text="Perkap.com">Perkap.com</h3>
                     <p class="portfolio-desc">E-commerce platform dengan fitur manajemen produk, sistem pembayaran, dan analitik penjualan.</p>
                 </div>
                 
-                <div class="portfolio-button" id="portfolio-btn-3">
+                <div class="portfolio-button mobile-portfolio" id="portfolio-btn-3">
                     <h3 class="portfolio-title" data-text="Sistem Informasi Wajib Tera">Sistem Informasi Wajib Tera</h3>
                     <p class="portfolio-desc">Aplikasi manajemen kalibrasi dan sertifikasi alat ukur dengan tracking otomatis.</p>
+                </div>
+                
+                <!-- Additional Portfolio Buttons (Desktop Only) -->
+                <div class="portfolio-button desktop-only">
+                    <h3>IKM Kota Blitar</h3>
+                    <p>Web application untuk IKM dengan katalog produk dan sistem pemasaran digital.</p>
+                </div>
+                
+                <div class="portfolio-button desktop-only">
+                    <h3>BLITARA – Chatbot AI</h3>
+                    <p>Intelligent chatbot dengan teknologi AI untuk layanan informasi otomatis.</p>
+                </div>
+                
+                <div class="portfolio-button desktop-only">
+                    <h3>Smart City Dashboard</h3>
+                    <p>Platform monitoring smart city dengan IoT sensors dan data visualization.</p>
                 </div>
             </div>
         </div>
@@ -384,38 +400,101 @@
         ];
 
         // Portfolio mobile animation
+        let currentPortfolioSet = 0; // 0 for first set, 1 for second set
+        let animationTimeout;
+
         function initPortfolioAnimation() {
             if (window.innerWidth <= 768) {
                 // Only run on mobile devices
-                setTimeout(() => {
-                    startTextGlitch();
-                }, 5000); // Wait 5 seconds
+                startPortfolioCycle();
             }
         }
 
+        function startPortfolioCycle() {
+            // Clear any existing timeout
+            if (animationTimeout) {
+                clearTimeout(animationTimeout);
+            }
+            
+            // Wait 5 seconds then start glitch animation
+            animationTimeout = setTimeout(() => {
+                startTextGlitch();
+            }, 5000);
+        }
+
+        // Function to create random glitch characters (similar to hero text)
+        function getRandomGlitchText(text) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|:<>?';
+            let result = '';
+            for (let i = 0; i < text.length; i++) {
+                // 70% chance to keep original character, 30% chance for random character
+                if (Math.random() > 0.3) {
+                    result += text[i];
+                } else {
+                    result += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+            }
+            return result;
+        }
+
         function startTextGlitch() {
-            const buttons = document.querySelectorAll('.portfolio-button');
+            const buttons = document.querySelectorAll('.mobile-portfolio');
+            
+            // Determine next set (toggle between 0 and 1)
+            const nextSet = currentPortfolioSet === 0 ? 1 : 0;
             
             buttons.forEach((button, index) => {
                 const titleElement = button.querySelector('.portfolio-title');
                 const descElement = button.querySelector('.portfolio-desc');
                 
-                // Add glitch effect to title
-                titleElement.classList.add('glitch-text');
-                titleElement.setAttribute('data-text', portfolioData[1][index].title);
+                // Store current text (what's currently displayed)
+                const currentTitle = titleElement.textContent;
+                const currentDesc = descElement.textContent;
                 
-                // Start glitch animation
+                // Get new content from next set
+                const newTitle = portfolioData[nextSet][index].title;
+                const newDesc = portfolioData[nextSet][index].desc;
+                
                 setTimeout(() => {
-                    // Change content after glitch effect
-                    titleElement.textContent = portfolioData[1][index].title;
-                    descElement.textContent = portfolioData[1][index].desc;
-                    titleElement.setAttribute('data-text', portfolioData[1][index].title);
+                    // Add glitch effect to both title and description
+                    titleElement.classList.add('glitch-text');
+                    titleElement.setAttribute('data-text', newTitle);
                     
-                    // Remove glitch effect after content change
-                    setTimeout(() => {
-                        titleElement.classList.remove('glitch-text');
-                    }, 500);
-                }, 1000 + (index * 200)); // Stagger the glitch effect
+                    descElement.classList.add('glitch-text');
+                    descElement.setAttribute('data-text', newDesc);
+                    
+                    // Glitch text rapidly a few times before changing
+                    let glitchCount = 0;
+                    const maxGlitches = 8;
+                    const glitchInterval = setInterval(() => {
+                        if (glitchCount < maxGlitches) {
+                            // Random glitch both title and description
+                            titleElement.textContent = getRandomGlitchText(currentTitle);
+                            descElement.textContent = getRandomGlitchText(currentDesc);
+                            glitchCount++;
+                        } else {
+                            clearInterval(glitchInterval);
+                            
+                            // Change to new content
+                            titleElement.textContent = newTitle;
+                            descElement.textContent = newDesc;
+                            titleElement.setAttribute('data-text', newTitle);
+                            descElement.setAttribute('data-text', newDesc);
+                            
+                            // Continue glitching for a short time after text change
+                            setTimeout(() => {
+                                titleElement.classList.remove('glitch-text');
+                                descElement.classList.remove('glitch-text');
+                                
+                                // If this is the last button, update current set and schedule next cycle
+                                if (index === buttons.length - 1) {
+                                    currentPortfolioSet = nextSet;
+                                    startPortfolioCycle(); // Start the next cycle
+                                }
+                            }, 500);
+                        }
+                    }, 100); // Interval between glitches
+                }, 1000 + (index * 400)); // Stagger the glitch effect more
             });
         }
 
