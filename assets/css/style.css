@@ -388,7 +388,7 @@ body::before {
 }
 
 /* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-width: 812px) and (orientation: portrait) {
     .typewriter-text {
         white-space: normal;
         border-right: none;
@@ -398,7 +398,27 @@ body::before {
     .client-marquee-content {
         animation-duration: 15s;
     }
+    
+    /* Hero section mobile adjustments - Simple approach */
+    #hero {
+        height: 100vh;
+        min-height: 100dvh;
+        padding-top: 4rem;
+    }
+    
+    #hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        height: auto;
+    }
+    
+    #hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
 }
+
 
 /* Animations for Page Elements */
 @keyframes fadeIn {
@@ -487,7 +507,6 @@ body::before {
 @media (max-width: 768px) {
     .portfolio-button {
         padding: 20px;
-        margin-bottom: -10px;
         border-width: 1.5px;
         border-radius: 10px;
     }
@@ -516,7 +535,6 @@ body::before {
         padding: 18px;
         border-radius: 8px;
         border-width: 2px;
-        margin-bottom: -12px;
         min-height: 120px;
         display: flex;
         flex-direction: column;
@@ -551,7 +569,6 @@ body::before {
     .portfolio-button {
         padding: 16px;
         border-radius: 6px;
-        margin-bottom: -15px;
         min-height: 110px;
     }
     
@@ -565,16 +582,33 @@ body::before {
     }
 }
 
-/* Desktop/Mobile Portfolio Display */
-@media (max-width: 768px) {
-    .desktop-only {
-        display: none !important;
-    }
+/* Portfolio responsive display is now handled by Tailwind CSS utilities */
+
+/* Portfolio Grid Layout */
+#portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
-@media (min-width: 769px) {
-    .desktop-only {
-        display: block !important;
+/* Mobile and tablet layout */
+@media (max-width: 1024px) {
+    #portfolio-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    #portfolio-grid .portfolio-button {
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    
+    /* Hide desktop-only portfolio items on mobile */
+    #portfolio-grid .portfolio-button.hidden {
+        display: none;
     }
 }
 

@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Lumbung Inovasi Digital - Innovative, Trusted, Secure</title>
     <meta name="description" content="CV Lumbung Inovasi Digital menyediakan layanan konsultasi IT, pengembangan & integrasi aplikasi, serta pelatihan & mentoring.">
     
@@ -66,27 +66,31 @@
             <div class="grid-animation"></div>
         </div>
         <div class="container mx-auto px-4 pt-16 md:pt-20 pb-16 relative z-10">
+            <!-- Mobile: Image first, Desktop: Text first -->
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div class="lg:w-1/2">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-sora font-semibold mb-6 h-20 md:h-24 lg:h-28 flex items-start">
+                <!-- Workflow Image - Show first on mobile -->
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <div class="workflow-animation">
+                        <!-- Interactive JS AI automation workflow will be implemented here -->
+                        <img src="assets/images/workflow-placeholder.svg" alt="AI Workflow" class="w-full max-w-sm mx-auto lg:max-w-none">
+                    </div>
+                </div>
+                
+                <!-- Text Content - Show second on mobile -->
+                <div class="lg:w-1/2 order-2 lg:order-1 text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-sora font-semibold mb-6 h-20 md:h-24 lg:h-28 flex items-start justify-center lg:justify-start">
                         <span id="hero-text" class="terminal-text">Solving Your Problems</span>
                     </h1>
                     <p class="text-xl text-[#8A8A9E] mb-8 shimmer-text">
                         "Turn obstacles into opportunities with fast and efficient solutions."
                     </p>
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
                         <a href="#contact" class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300 glow-effect btn-glitch" data-text="Chat With AI">
                             Chat With AI
                         </a>
                         <a href="#about" class="btn btn-outline border-[#1C1C2E] text-[#D1D1E9] hover:bg-[#1C1C2E] hover:text-[#50C9F2] transition-colors duration-300 btn-glitch" data-text="Explore">
                             Explore
                         </a>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <div class="workflow-animation">
-                        <!-- Interactive JS AI automation workflow will be implemented here -->
-                        <img src="assets/images/workflow-placeholder.svg" alt="AI Workflow" class="w-full">
                     </div>
                 </div>
             </div>
@@ -223,13 +227,13 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 bg-[#0A0A1A]">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-sora font-medium mb-4">Our Portfolio</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] mx-auto"></div>
                 <p class="text-[#8A8A9E] mt-6 max-w-2xl mx-auto">Explore our successful projects and see how we've helped our clients achieve their digital goals.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+            <div id="portfolio-grid">
                 <!-- Portfolio Buttons with Dynamic Content (Mobile: 3 buttons with glitch animation) -->
                 <div class="portfolio-button mobile-portfolio" id="portfolio-btn-1">
                     <h3 class="portfolio-title" data-text="Website Desa Ngadipuro">Website Desa Ngadipuro</h3>
@@ -247,17 +251,17 @@
                 </div>
                 
                 <!-- Additional Portfolio Buttons (Desktop Only) -->
-                <div class="portfolio-button desktop-only">
+                <div class="portfolio-button hidden lg:block">
                     <h3>IKM Kota Blitar</h3>
                     <p>Web application untuk IKM dengan katalog produk dan sistem pemasaran digital.</p>
                 </div>
                 
-                <div class="portfolio-button desktop-only">
+                <div class="portfolio-button hidden lg:block">
                     <h3>BLITARA – Chatbot AI</h3>
                     <p>Intelligent chatbot dengan teknologi AI untuk layanan informasi otomatis.</p>
                 </div>
                 
-                <div class="portfolio-button desktop-only">
+                <div class="portfolio-button hidden lg:block">
                     <h3>Smart City Dashboard</h3>
                     <p>Platform monitoring smart city dengan IoT sensors dan data visualization.</p>
                 </div>
@@ -400,34 +404,29 @@
         ];
 
         // Portfolio mobile animation
-        let currentPortfolioSet = 0; // 0 for first set, 1 for second set
+        let currentPortfolioSet = 0;
         let animationTimeout;
 
         function initPortfolioAnimation() {
             if (window.innerWidth <= 768) {
-                // Only run on mobile devices
                 startPortfolioCycle();
             }
         }
 
         function startPortfolioCycle() {
-            // Clear any existing timeout
             if (animationTimeout) {
                 clearTimeout(animationTimeout);
             }
             
-            // Wait 5 seconds then start glitch animation
             animationTimeout = setTimeout(() => {
                 startTextGlitch();
             }, 5000);
         }
 
-        // Function to create random glitch characters (similar to hero text)
         function getRandomGlitchText(text) {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|:<>?';
             let result = '';
             for (let i = 0; i < text.length; i++) {
-                // 70% chance to keep original character, 30% chance for random character
                 if (Math.random() > 0.3) {
                     result += text[i];
                 } else {
@@ -439,66 +438,55 @@
 
         function startTextGlitch() {
             const buttons = document.querySelectorAll('.mobile-portfolio');
-            
-            // Determine next set (toggle between 0 and 1)
             const nextSet = currentPortfolioSet === 0 ? 1 : 0;
             
             buttons.forEach((button, index) => {
                 const titleElement = button.querySelector('.portfolio-title');
                 const descElement = button.querySelector('.portfolio-desc');
                 
-                // Store current text (what's currently displayed)
                 const currentTitle = titleElement.textContent;
                 const currentDesc = descElement.textContent;
                 
-                // Get new content from next set
                 const newTitle = portfolioData[nextSet][index].title;
                 const newDesc = portfolioData[nextSet][index].desc;
                 
                 setTimeout(() => {
-                    // Add glitch effect to both title and description
                     titleElement.classList.add('glitch-text');
                     titleElement.setAttribute('data-text', newTitle);
                     
                     descElement.classList.add('glitch-text');
                     descElement.setAttribute('data-text', newDesc);
                     
-                    // Glitch text rapidly a few times before changing
                     let glitchCount = 0;
                     const maxGlitches = 8;
                     const glitchInterval = setInterval(() => {
                         if (glitchCount < maxGlitches) {
-                            // Random glitch both title and description
                             titleElement.textContent = getRandomGlitchText(currentTitle);
                             descElement.textContent = getRandomGlitchText(currentDesc);
                             glitchCount++;
                         } else {
                             clearInterval(glitchInterval);
                             
-                            // Change to new content
                             titleElement.textContent = newTitle;
                             descElement.textContent = newDesc;
                             titleElement.setAttribute('data-text', newTitle);
                             descElement.setAttribute('data-text', newDesc);
                             
-                            // Continue glitching for a short time after text change
                             setTimeout(() => {
                                 titleElement.classList.remove('glitch-text');
                                 descElement.classList.remove('glitch-text');
                                 
-                                // If this is the last button, update current set and schedule next cycle
                                 if (index === buttons.length - 1) {
                                     currentPortfolioSet = nextSet;
-                                    startPortfolioCycle(); // Start the next cycle
+                                    startPortfolioCycle();
                                 }
                             }, 500);
                         }
-                    }, 100); // Interval between glitches
-                }, 1000 + (index * 400)); // Stagger the glitch effect more
+                    }, 100);
+                }, 1000 + (index * 400));
             });
         }
 
-        // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', initPortfolioAnimation);
     </script>
 </body>
