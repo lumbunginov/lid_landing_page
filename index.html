@@ -229,45 +229,26 @@
                 <p class="text-[#8A8A9E] mt-6 max-w-2xl mx-auto">Explore our successful projects and see how we've helped our clients achieve their digital goals.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-button">
-                    <h3>Website Desa Ngadipuro</h3>
-                    <p>Platform digital untuk desa dengan layanan administrasi online dan komunikasi dengan masyarakat.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+                <!-- Portfolio Buttons with Dynamic Content -->
+                <div class="portfolio-button" id="portfolio-btn-1">
+                    <h3 class="portfolio-title" data-text="Website Desa Ngadipuro">Website Desa Ngadipuro</h3>
+                    <p class="portfolio-desc">Platform digital untuk desa dengan layanan administrasi online dan komunikasi dengan masyarakat.</p>
                 </div>
                 
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-button">
-                    <h3>Perkap.com</h3>
-                    <p>E-commerce platform dengan fitur manajemen produk, sistem pembayaran, dan analitik penjualan.</p>
+                <div class="portfolio-button" id="portfolio-btn-2">
+                    <h3 class="portfolio-title" data-text="Perkap.com">Perkap.com</h3>
+                    <p class="portfolio-desc">E-commerce platform dengan fitur manajemen produk, sistem pembayaran, dan analitik penjualan.</p>
                 </div>
                 
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-button">
-                    <h3>Sistem Informasi Wajib Tera</h3>
-                    <p>Aplikasi manajemen kalibrasi dan sertifikasi alat ukur dengan tracking otomatis.</p>
-                </div>
-                
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-button">
-                    <h3>IKM Kota Blitar</h3>
-                    <p>Web application untuk IKM dengan katalog produk dan sistem pemasaran digital.</p>
-                </div>
-                
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-button">
-                    <h3>BLITARA – Chatbot AI</h3>
-                    <p>Intelligent chatbot dengan teknologi AI untuk layanan informasi otomatis.</p>
-                </div>
-                
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-button">
-                    <h3>Smart City Dashboard</h3>
-                    <p>Platform monitoring smart city dengan IoT sensors dan data visualization.</p>
+                <div class="portfolio-button" id="portfolio-btn-3">
+                    <h3 class="portfolio-title" data-text="Sistem Informasi Wajib Tera">Sistem Informasi Wajib Tera</h3>
+                    <p class="portfolio-desc">Aplikasi manajemen kalibrasi dan sertifikasi alat ukur dengan tracking otomatis.</p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 relative">
@@ -385,5 +366,61 @@
 
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- Portfolio Mobile Animation Script -->
+    <script>
+        // Portfolio data for carousel
+        const portfolioData = [
+            [
+                { title: "Website Desa Ngadipuro", desc: "Platform digital untuk desa dengan layanan administrasi online dan komunikasi dengan masyarakat." },
+                { title: "Perkap.com", desc: "E-commerce platform dengan fitur manajemen produk, sistem pembayaran, dan analitik penjualan." },
+                { title: "Sistem Informasi Wajib Tera", desc: "Aplikasi manajemen kalibrasi dan sertifikasi alat ukur dengan tracking otomatis." }
+            ],
+            [
+                { title: "IKM Kota Blitar", desc: "Web application untuk IKM dengan katalog produk dan sistem pemasaran digital." },
+                { title: "BLITARA – Chatbot AI", desc: "Intelligent chatbot dengan teknologi AI untuk layanan informasi otomatis." },
+                { title: "Smart City Dashboard", desc: "Platform monitoring smart city dengan IoT sensors dan data visualization." }
+            ]
+        ];
+
+        // Portfolio mobile animation
+        function initPortfolioAnimation() {
+            if (window.innerWidth <= 768) {
+                // Only run on mobile devices
+                setTimeout(() => {
+                    startTextGlitch();
+                }, 5000); // Wait 5 seconds
+            }
+        }
+
+        function startTextGlitch() {
+            const buttons = document.querySelectorAll('.portfolio-button');
+            
+            buttons.forEach((button, index) => {
+                const titleElement = button.querySelector('.portfolio-title');
+                const descElement = button.querySelector('.portfolio-desc');
+                
+                // Add glitch effect to title
+                titleElement.classList.add('glitch-text');
+                titleElement.setAttribute('data-text', portfolioData[1][index].title);
+                
+                // Start glitch animation
+                setTimeout(() => {
+                    // Change content after glitch effect
+                    titleElement.textContent = portfolioData[1][index].title;
+                    descElement.textContent = portfolioData[1][index].desc;
+                    titleElement.setAttribute('data-text', portfolioData[1][index].title);
+                    
+                    // Remove glitch effect after content change
+                    setTimeout(() => {
+                        titleElement.classList.remove('glitch-text');
+                    }, 500);
+                }, 1000 + (index * 200)); // Stagger the glitch effect
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initPortfolioAnimation);
+    </script>
 </body>
 </html>
