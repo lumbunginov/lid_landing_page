@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp remove:*)",
+      "Bash(claude mcp add:*)",
+      "mcp__playwright__browser_snapshot",
+      "mcp__context7__resolve-library-id",
+      "mcp__playwright__browser_navigate",
+      "mcp__context7__get-library-docs",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_hover"
+    ],
+    "deny": []
+  }
+}

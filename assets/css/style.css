@@ -263,9 +263,11 @@ html {
 
 .terminal-text::after {
     content: '|';
+    position: absolute;
+    right: 0;
+    top: 0;
     color: var(--neon-blue);
     animation: blink-caret 0.75s step-end infinite;
-    margin-left: 2px;
 }
 
 @keyframes blink-caret {
@@ -367,36 +369,6 @@ html {
     transform: scale(1.05);
 }
 
-/* Simple Portfolio Button Style */
-.portfolio-button {
-    background: linear-gradient(135deg, #0B0B1F 0%, #151538 100%);
-    border: 1px solid #8C5FFF;
-    border-radius: 8px;
-    padding: 16px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-}
-
-.portfolio-button:hover {
-    transform: translateY(-4px);
-    border-color: #A478FF;
-    box-shadow: 0 8px 25px rgba(140, 95, 255, 0.25);
-}
-
-.portfolio-button h3 {
-    color: #FFFFFF;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.portfolio-button p {
-    color: #8A8A9E;
-    font-size: 0.875rem;
-    line-height: 1.5;
-}
-
 /* Scan Line Effect */
 body::before {
     content: '';
@@ -426,45 +398,6 @@ body::before {
     .client-marquee-content {
         animation-duration: 15s;
     }
-    
-    /* Reorder hero section elements on mobile */
-    #hero .container > div {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    #hero .lg\:w-1\/2:first-child {
-        order: 2;
-    }
-    
-    #hero .lg\:w-1\/2:last-child {
-        order: 1;
-    }
-    
-    /* Portfolio buttons mobile responsive */
-    #portfolio .container {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    
-    #portfolio .grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .portfolio-button {
-        padding: 12px;
-    }
-    
-    .portfolio-button h3 {
-        font-size: 0.9rem;
-        margin-bottom: 6px;
-    }
-    
-    .portfolio-button p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-    }
 }
 
 /* Animations for Page Elements */
@@ -482,216 +415,152 @@ body::before {
     position: relative;
 }
 
-/* Workflow Node Interactive Effects */
-.workflow-node {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.workflow-node:hover rect {
-    filter: drop-shadow(0 0 8px #50C9F2);
-    transform: scale(1.05);
-}
-
-.workflow-node:active {
-    transform: scale(0.95);
-}
-
-/* Individual node hover colors */
-#workflow-input:hover rect {
-    filter: drop-shadow(0 0 8px #50C9F2);
-}
-
-#workflow-agent:hover rect {
-    filter: drop-shadow(0 0 8px #8C5FFF);
-}
-
-#workflow-model:hover rect {
-    filter: drop-shadow(0 0 8px #00FFB2);
-}
-
-#workflow-tools:hover rect {
-    filter: drop-shadow(0 0 8px #8C5FFF);
-}
-
-#workflow-output:hover rect {
-    filter: drop-shadow(0 0 8px #50C9F2);
-}
-
-/* Ripple effect animation for workflow node clicks */
-@keyframes ripple-effect {
-    0% {
-        transform: scale(0);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-
-
 /* Efek pulsing telah dihapus sesuai permintaan */
 
-/* Button Glitch Effect on Hover */
-.btn-glitch {
+/* Portfolio Purple Neon Outline Buttons */
+.portfolio-button {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.1s ease;
+    display: block;
+    padding: 24px;
+    background: rgba(11, 11, 31, 0.8);
+    border: 2px solid #8C5FFF;
+    border-radius: 12px;
+    color: #D1D1E9;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-.btn-glitch:hover {
-    animation: 
-        btn-glitch-shake 0.3s ease-in-out infinite,
-        btn-text-glitch 0.2s infinite linear;
-    text-shadow: 
-        -2px 0 #ff00ff,
-        2px 0 #00ffff,
-        0 0 0 currentColor;
+.portfolio-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(140, 95, 255, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
-@keyframes btn-glitch-shake {
-    0% { transform: translate(0); }
-    20% { transform: translate(-1px, 1px); }
-    40% { transform: translate(-1px, -1px); }
-    60% { transform: translate(1px, 1px); }
-    80% { transform: translate(1px, -1px); }
-    100% { transform: translate(0); }
+.portfolio-button:hover::before {
+    left: 100%;
 }
 
-@keyframes btn-text-glitch {
-    0% {
-        text-shadow: 
-            -2px 0 #ff00ff,
-            2px 0 #00ffff;
-    }
-    25% {
-        text-shadow: 
-            2px 0 #ff00ff,
-            -2px 0 #00ffff;
-    }
-    50% {
-        text-shadow: 
-            -1px 0 #ff00ff,
-            3px 0 #00ffff;
-    }
-    75% {
-        text-shadow: 
-            3px 0 #ff00ff,
-            -1px 0 #00ffff;
-    }
-    100% {
-        text-shadow: 
-            -2px 0 #ff00ff,
-            2px 0 #00ffff;
-    }
+.portfolio-button:hover {
+    border-color: #A855F7;
+    box-shadow: 
+        0 0 20px rgba(140, 95, 255, 0.3),
+        0 0 40px rgba(140, 95, 255, 0.1),
+        inset 0 0 20px rgba(140, 95, 255, 0.1);
+    transform: translateY(-2px);
 }
 
-@keyframes btn-glitch-1 {
-    0% {
-        clip: rect(7px, 9999px, 2px, 0);
-        transform: skew(0.5deg);
-    }
-    10% {
-        clip: rect(33px, 9999px, 12px, 0);
-        transform: skew(0.2deg);
-    }
-    20% {
-        clip: rect(44px, 9999px, 18px, 0);
-        transform: skew(0.8deg);
-    }
-    30% {
-        clip: rect(25px, 9999px, 35px, 0);
-        transform: skew(0.3deg);
-    }
-    40% {
-        clip: rect(6px, 9999px, 42px, 0);
-        transform: skew(0.7deg);
-    }
-    50% {
-        clip: rect(20px, 9999px, 8px, 0);
-        transform: skew(0.1deg);
-    }
-    60% {
-        clip: rect(15px, 9999px, 30px, 0);
-        transform: skew(0.6deg);
-    }
-    70% {
-        clip: rect(38px, 9999px, 5px, 0);
-        transform: skew(0.4deg);
-    }
-    80% {
-        clip: rect(12px, 9999px, 28px, 0);
-        transform: skew(0.9deg);
-    }
-    90% {
-        clip: rect(1px, 9999px, 40px, 0);
-        transform: skew(0.2deg);
-    }
-    100% {
-        clip: rect(22px, 9999px, 14px, 0);
-        transform: skew(0.5deg);
-    }
+.portfolio-button h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #D1D1E9;
+    font-family: 'Sora', sans-serif;
 }
 
-@keyframes btn-glitch-2 {
-    0% {
-        clip: rect(17px, 9999px, 5px, 0);
-        transform: skew(0.3deg);
-    }
-    10% {
-        clip: rect(2px, 9999px, 38px, 0);
-        transform: skew(0.7deg);
-    }
-    20% {
-        clip: rect(31px, 9999px, 11px, 0);
-        transform: skew(0.1deg);
-    }
-    30% {
-        clip: rect(8px, 9999px, 29px, 0);
-        transform: skew(0.8deg);
-    }
-    40% {
-        clip: rect(41px, 9999px, 4px, 0);
-        transform: skew(0.2deg);
-    }
-    50% {
-        clip: rect(14px, 9999px, 36px, 0);
-        transform: skew(0.6deg);
-    }
-    60% {
-        clip: rect(23px, 9999px, 9px, 0);
-        transform: skew(0.4deg);
-    }
-    70% {
-        clip: rect(3px, 9999px, 32px, 0);
-        transform: skew(0.9deg);
-    }
-    80% {
-        clip: rect(39px, 9999px, 16px, 0);
-        transform: skew(0.1deg);
-    }
-    90% {
-        clip: rect(26px, 9999px, 7px, 0);
-        transform: skew(0.5deg);
-    }
-    100% {
-        clip: rect(11px, 9999px, 21px, 0);
-        transform: skew(0.3deg);
-    }
+.portfolio-button p {
+    font-size: 0.95rem;
+    color: #8A8A9E;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Navbar Best Practices */
-nav {
-    height: 64px;
+.portfolio-button:hover h3 {
+    color: #8C5FFF;
 }
 
+.portfolio-button:hover p {
+    color: #B4B4C7;
+}
+
+/* Responsive adjustments for portfolio buttons */
 @media (max-width: 768px) {
-    nav {
-        height: 56px;
+    .portfolio-button {
+        padding: 20px;
+        margin-bottom: -10px;
+        border-width: 1.5px;
+        border-radius: 10px;
+    }
+    
+    .portfolio-button h3 {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+    }
+    
+    .portfolio-button p {
+        font-size: 0.9rem;
+    }
+    
+    .portfolio-button:hover {
+        border-color: #A855F7;
+        box-shadow: 
+            0 0 15px rgba(140, 95, 255, 0.4),
+            0 0 30px rgba(140, 95, 255, 0.15),
+            inset 0 0 15px rgba(140, 95, 255, 0.15);
+        transform: translateY(-1px);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-button {
+        padding: 18px;
+        border-radius: 8px;
+        border-width: 2px;
+        margin-bottom: -12px;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .portfolio-button h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+    
+    .portfolio-button p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .portfolio-button:hover {
+        border-color: #A855F7;
+        box-shadow: 
+            0 0 12px rgba(140, 95, 255, 0.5),
+            0 0 24px rgba(140, 95, 255, 0.2),
+            inset 0 0 12px rgba(140, 95, 255, 0.2);
+        transform: translateY(-1px);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .portfolio-button {
+        padding: 16px;
+        border-radius: 6px;
+        margin-bottom: -15px;
+        min-height: 110px;
+    }
+    
+    .portfolio-button h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .portfolio-button p {
+        font-size: 0.8rem;
     }
 }
