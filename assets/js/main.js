@@ -139,8 +139,8 @@ function animateHeroText() {
     const heroText = document.getElementById('hero-text');
     if (!heroText) return;
 
-    const firstText = "Solve Your Problem";
-    const secondText = "More Efficiently";
+    const firstText = "Solving Your Problems";
+    const secondText = "Faster and More Efficiently";
     let isAnimating = false;
 
     // Clear initial text
