@@ -26,20 +26,12 @@
 </head>
 <body class="bg-[#0B0B1F] text-[#D1D1E9] font-inter">
     <!-- Navbar -->
-    <nav class="navbar fixed top-0 z-50 backdrop-blur-md bg-[#0B0B1F]/80 border-b border-[#1C1C2E]">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-[#0B0B1F]/40 border-b border-[#1C1C2E]/30">
+        <div class="container mx-auto px-4 h-14 md:h-16 flex justify-between items-center">
             <a href="#" class="flex items-center">
-                <img src="assets/images/logo.svg" alt="Lumbung Inovasi Digital" class="h-10">
+                <img src="assets/images/logo.svg" alt="Lumbung Inovasi Digital" class="h-8 md:h-10">
             </a>
             
-            <!-- Mobile menu button -->
-            <div class="block lg:hidden">
-                <button id="mobile-menu-button" class="btn btn-ghost btn-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
             
             <!-- Desktop menu -->
             <div class="hidden lg:flex space-x-8">
@@ -57,21 +49,6 @@
             </div>
         </div>
         
-        <!-- Mobile menu (hidden by default) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-[#0B0B1F]/95 z-40 hidden flex-col justify-center items-center space-y-8 lg:hidden">
-            <button id="close-menu-button" class="absolute top-6 right-6 btn btn-ghost btn-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <a href="#hero" class="text-xl text-[#D1D1E9] hover:text-[#50C9F2] transition-colors duration-300">Home</a>
-            <a href="#about" class="text-xl text-[#D1D1E9] hover:text-[#50C9F2] transition-colors duration-300">About</a>
-            <a href="#portfolio" class="text-xl text-[#D1D1E9] hover:text-[#50C9F2] transition-colors duration-300">Portfolio</a>
-            <a href="#contact" class="text-xl text-[#D1D1E9] hover:text-[#50C9F2] transition-colors duration-300">Contact</a>
-            <a href="#contact" class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300 mt-4">
-                Chat With AI
-            </a>
-        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -88,7 +65,7 @@
         <div class="absolute inset-0 z-[2]">
             <div class="grid-animation"></div>
         </div>
-        <div class="container mx-auto px-4 py-16 relative z-10">
+        <div class="container mx-auto px-4 pt-16 md:pt-20 pb-16 relative z-10">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
                 <div class="lg:w-1/2">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-sora font-semibold mb-6 h-20 md:h-24 lg:h-28 flex items-start">
@@ -252,70 +229,41 @@
                 <p class="text-[#8A8A9E] mt-6 max-w-2xl mx-auto">Explore our successful projects and see how we've helped our clients achieve their digital goals.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Portfolio Item 1 -->
-                <div class="portfolio-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio-1.svg" alt="Website Desa Ngadipuro" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B1F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-medium text-white mb-2">Website Desa Ngadipuro</h3>
-                                <p class="text-[#D1D1E9] text-sm">Web Development</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="portfolio-button">
+                    <h3>Website Desa Ngadipuro</h3>
+                    <p>Platform digital untuk desa dengan layanan administrasi online dan komunikasi dengan masyarakat.</p>
                 </div>
                 
                 <!-- Portfolio Item 2 -->
-                <div class="portfolio-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio-2.svg" alt="Perkap.com" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B1F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-medium text-white mb-2">Perkap.com</h3>
-                                <p class="text-[#D1D1E9] text-sm">E-commerce Platform</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="portfolio-button">
+                    <h3>Perkap.com</h3>
+                    <p>E-commerce platform dengan fitur manajemen produk, sistem pembayaran, dan analitik penjualan.</p>
                 </div>
                 
                 <!-- Portfolio Item 3 -->
-                <div class="portfolio-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio-3.svg" alt="Sistem Informasi Wajib Tera" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B1F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-medium text-white mb-2">Sistem Informasi Wajib Tera</h3>
-                                <p class="text-[#D1D1E9] text-sm">Information System</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="portfolio-button">
+                    <h3>Sistem Informasi Wajib Tera</h3>
+                    <p>Aplikasi manajemen kalibrasi dan sertifikasi alat ukur dengan tracking otomatis.</p>
                 </div>
                 
                 <!-- Portfolio Item 4 -->
-                <div class="portfolio-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio-4.svg" alt="IKM Kota Blitar" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B1F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-medium text-white mb-2">IKM Kota Blitar</h3>
-                                <p class="text-[#D1D1E9] text-sm">Web Application</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="portfolio-button">
+                    <h3>IKM Kota Blitar</h3>
+                    <p>Web application untuk IKM dengan katalog produk dan sistem pemasaran digital.</p>
                 </div>
                 
                 <!-- Portfolio Item 5 -->
-                <div class="portfolio-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio-5.svg" alt="BLITARA – Chatbot AI" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B1F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-medium text-white mb-2">BLITARA – Chatbot AI</h3>
-                                <p class="text-[#D1D1E9] text-sm">AI Development</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="portfolio-button">
+                    <h3>BLITARA – Chatbot AI</h3>
+                    <p>Intelligent chatbot dengan teknologi AI untuk layanan informasi otomatis.</p>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-button">
+                    <h3>Smart City Dashboard</h3>
+                    <p>Platform monitoring smart city dengan IoT sensors dan data visualization.</p>
                 </div>
             </div>
         </div>

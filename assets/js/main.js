@@ -1,32 +1,6 @@
 // Main JavaScript for Lumbung Inovasi Digital Landing Page
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const closeMenuButton = document.getElementById('close-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('flex');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-    });
-
-    closeMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('flex');
-        mobileMenu.classList.add('hidden');
-        document.body.style.overflow = ''; // Re-enable scrolling
-    });
-
-    // Close mobile menu when clicking on a link
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('flex');
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = ''; // Re-enable scrolling
-        });
-    });
 
     // Duplicate client logos for infinite marquee
     const clientMarquee = document.querySelector('.client-marquee-content');

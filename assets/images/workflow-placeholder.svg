@@ -95,129 +95,129 @@
   <g>
     <!-- Input Nodes -->
     <g id="workflow-trigger" class="workflow-node">
-      <rect x="10" y="30" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
-      <text x="50" y="55" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Webhook</text>
-      <text x="50" y="70" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Trigger</text>
+      <rect x="10" y="30" width="80" height="60" rx="8" ry="8" fill="none" stroke="#50C9F2" stroke-width="1.5" opacity="0.8"/>
+      <text x="50" y="55" font-family="JetBrains Mono, monospace" font-size="10" fill="#50C9F2" text-anchor="middle">Webhook</text>
+      <text x="50" y="70" font-family="JetBrains Mono, monospace" font-size="10" fill="#50C9F2" text-anchor="middle">Trigger</text>
     </g>
     
     <g id="workflow-data" class="workflow-node">
-      <rect x="10" y="170" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)" filter="url(#glow)"/>
-      <text x="50" y="205" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">WhatsApp</text>
+      <rect x="10" y="170" width="80" height="60" rx="8" ry="8" fill="none" stroke="#00FFB2" stroke-width="1.5" opacity="0.8"/>
+      <text x="50" y="205" font-family="JetBrains Mono, monospace" font-size="10" fill="#00FFB2" text-anchor="middle">WhatsApp</text>
     </g>
     
     
     <!-- Processing Nodes -->
     <g id="workflow-processor" class="workflow-node">
-      <rect x="170" y="90" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#pulse)"/>
-      <text x="210" y="125" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">AI Agent</text>
+      <rect x="170" y="90" width="80" height="60" rx="8" ry="8" fill="none" stroke="#8C5FFF" stroke-width="1.5" opacity="0.9"/>
+      <text x="210" y="125" font-family="JetBrains Mono, monospace" font-size="10" fill="#8C5FFF" text-anchor="middle">AI Agent</text>
     </g>
     
     <g id="workflow-transform" class="workflow-node">
-      <rect x="170" y="220" width="80" height="60" rx="8" ry="8" fill="url(#orangeGradient)" filter="url(#glow)"/>
-      <text x="210" y="245" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Data</text>
-      <text x="210" y="260" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Transform</text>
+      <rect x="170" y="220" width="80" height="60" rx="8" ry="8" fill="none" stroke="#FF6B35" stroke-width="1.5" opacity="0.8"/>
+      <text x="210" y="245" font-family="JetBrains Mono, monospace" font-size="10" fill="#FF6B35" text-anchor="middle">Data</text>
+      <text x="210" y="260" font-family="JetBrains Mono, monospace" font-size="10" fill="#FF6B35" text-anchor="middle">Transform</text>
     </g>
     
     <!-- AI Service Nodes -->
     <g id="workflow-llm" class="workflow-node">
-      <rect x="330" y="50" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)" filter="url(#pulse)"/>
-      <text x="370" y="85" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">AI Tools</text>
+      <rect x="330" y="50" width="80" height="60" rx="8" ry="8" fill="none" stroke="#00FFB2" stroke-width="1.5" opacity="0.9"/>
+      <text x="370" y="85" font-family="JetBrains Mono, monospace" font-size="10" fill="#00FFB2" text-anchor="middle">AI Tools</text>
     </g>
     
     <g id="workflow-vector" class="workflow-node">
-      <rect x="330" y="170" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
-      <text x="370" y="195" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Vector</text>
-      <text x="370" y="210" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Database</text>
+      <rect x="330" y="170" width="80" height="60" rx="8" ry="8" fill="none" stroke="#50C9F2" stroke-width="1.5" opacity="0.8"/>
+      <text x="370" y="195" font-family="JetBrains Mono, monospace" font-size="10" fill="#50C9F2" text-anchor="middle">Vector</text>
+      <text x="370" y="210" font-family="JetBrains Mono, monospace" font-size="10" fill="#50C9F2" text-anchor="middle">Database</text>
     </g>
     
     <g id="workflow-api" class="workflow-node">
-      <rect x="330" y="290" width="80" height="60" rx="8" ry="8" fill="url(#orangeGradient)" filter="url(#glow)"/>
-      <text x="370" y="315" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">API</text>
-      <text x="370" y="330" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Gateway</text>
+      <rect x="330" y="290" width="80" height="60" rx="8" ry="8" fill="none" stroke="#FF6B35" stroke-width="1.5" opacity="0.8"/>
+      <text x="370" y="315" font-family="JetBrains Mono, monospace" font-size="10" fill="#FF6B35" text-anchor="middle">API</text>
+      <text x="370" y="330" font-family="JetBrains Mono, monospace" font-size="10" fill="#FF6B35" text-anchor="middle">Gateway</text>
     </g>
     
     <!-- Output Nodes -->
     <g id="workflow-response" class="workflow-node">
-      <rect x="490" y="120" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#glow)"/>
-      <text x="530" y="155" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">AI Curator</text>
+      <rect x="490" y="120" width="80" height="60" rx="8" ry="8" fill="none" stroke="#8C5FFF" stroke-width="1.5" opacity="0.8"/>
+      <text x="530" y="155" font-family="JetBrains Mono, monospace" font-size="10" fill="#8C5FFF" text-anchor="middle">AI Curator</text>
     </g>
     
     <g id="workflow-notification" class="workflow-node">
-      <rect x="490" y="260" width="80" height="60" rx="8" ry="8" fill="url(#yellowGradient)" filter="url(#glow)"/>
-      <text x="530" y="295" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Output</text>
+      <rect x="490" y="260" width="80" height="60" rx="8" ry="8" fill="none" stroke="#FFD700" stroke-width="1.5" opacity="0.8"/>
+      <text x="530" y="295" font-family="JetBrains Mono, monospace" font-size="10" fill="#FFD700" text-anchor="middle">Output</text>
     </g>
   </g>
   
   <!-- Animated Data Flow -->
   <g>
     <!-- Primary Flow Animations -->
-    <circle r="3" fill="#50C9F2" opacity="0.9">
+    <circle r="3" fill="#50C9F2" opacity="0.6">
       <animateMotion path="M90,60 C130,60 130,120 170,120" dur="2.5s" repeatCount="indefinite"/>
     </circle>
     
-    <circle r="3" fill="#8C5FFF" opacity="0.9">
+    <circle r="3" fill="#8C5FFF" opacity="0.6">
       <animateMotion path="M250,120 C290,120 290,80 330,80" dur="2s" repeatCount="indefinite" begin="0.3s"/>
     </circle>
     
     <!-- AI Agent to Vector Database bidirectional animation -->
-    <circle r="3" fill="#8C5FFF" opacity="0.9">
+    <circle r="3" fill="#8C5FFF" opacity="0.6">
       <animateMotion path="M250,120 C290,120 290,200 330,200" dur="0.5s" repeatCount="indefinite" begin="0.6s"/>
     </circle>
     
-    <circle r="3" fill="#50C9F2" opacity="0.7">
+    <circle r="3" fill="#50C9F2" opacity="0.5">
       <animateMotion path="M330,200 C290,200 290,120 250,120" dur="0.5s" repeatCount="indefinite" begin="0.85s"/>
     </circle>
     
-    <circle r="3" fill="#8C5FFF" opacity="0.9">
+    <circle r="3" fill="#8C5FFF" opacity="0.6">
       <animateMotion path="M250,120 C290,120 290,320 330,320" dur="3s" repeatCount="indefinite" begin="0.9s"/>
     </circle>
     
     <!-- Secondary Flow Animations -->
-    <circle r="2" fill="#00FFB2" opacity="0.7">
+    <circle r="2" fill="#00FFB2" opacity="0.5">
       <animateMotion path="M90,200 C130,200 130,120 170,120" dur="2.8s" repeatCount="indefinite" begin="1s"/>
     </circle>
     
     <!-- WhatsApp to Data Transform Animation -->
-    <circle r="2" fill="#00FFB2" opacity="0.7">
+    <circle r="2" fill="#00FFB2" opacity="0.5">
       <animateMotion path="M90,200 C130,200 130,250 170,250" dur="2.6s" repeatCount="indefinite" begin="1.2s"/>
     </circle>
     
     
     <!-- Data Transform to AI Agent Animation -->
-    <circle r="2" fill="#FF6B35" opacity="0.7">
+    <circle r="2" fill="#FF6B35" opacity="0.5">
       <animateMotion path="M210,220 L210,150" dur="1.8s" repeatCount="indefinite" begin="1.8s"/>
     </circle>
     
     <!-- AI Tools to Vector Database bidirectional animation -->
-    <circle r="2" fill="#00FFB2" opacity="0.8">
+    <circle r="2" fill="#00FFB2" opacity="0.5">
       <animateMotion path="M370,110 L370,170" dur="1s" repeatCount="indefinite" begin="0.5s"/>
     </circle>
     
-    <circle r="2" fill="#50C9F2" opacity="0.6">
+    <circle r="2" fill="#50C9F2" opacity="0.4">
       <animateMotion path="M370,170 L370,110" dur="1s" repeatCount="indefinite" begin="1s"/>
     </circle>
     
     <!-- API Gateway to Vector Database bidirectional animation -->
-    <circle r="2" fill="#FF6B35" opacity="0.8">
+    <circle r="2" fill="#FF6B35" opacity="0.5">
       <animateMotion path="M370,290 L370,230" dur="0.8s" repeatCount="indefinite" begin="0.3s"/>
     </circle>
     
-    <circle r="2" fill="#50C9F2" opacity="0.6">
+    <circle r="2" fill="#50C9F2" opacity="0.4">
       <animateMotion path="M370,230 L370,290" dur="0.8s" repeatCount="indefinite" begin="0.7s"/>
     </circle>
 
     <!-- Output Flow Animations -->
-    <circle r="3" fill="#8C5FFF" opacity="0.9">
+    <circle r="3" fill="#8C5FFF" opacity="0.6">
       <animateMotion path="M410,80 C450,80 450,150 490,150" dur="2s" repeatCount="indefinite" begin="1.2s"/>
     </circle>
     
     
-    <circle r="3" fill="#FF6B35" opacity="0.9">
+    <circle r="3" fill="#FF6B35" opacity="0.6">
       <animateMotion path="M410,320 C450,320 450,150 490,150" dur="2.5s" repeatCount="indefinite" begin="1.8s"/>
     </circle>
     
     <!-- AI Curator to Output Animation -->
-    <circle r="3" fill="#8C5FFF" opacity="0.9">
+    <circle r="3" fill="#8C5FFF" opacity="0.6">
       <animateMotion path="M530,180 L530,260" dur="1.5s" repeatCount="indefinite" begin="2s"/>
     </circle>
     

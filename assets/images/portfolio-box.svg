@@ -1,0 +1,24 @@
+<svg width="400" height="140" viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="boxBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B1F" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#151538" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="boxGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Main box background -->
+  <rect width="400" height="140" rx="8" ry="8" fill="url(#boxBgGradient)"/>
+  
+  <!-- Outer border -->
+  <rect x="0.5" y="0.5" width="399" height="139" rx="8" ry="8" fill="none" stroke="#8C5FFF" stroke-width="0.5" filter="url(#boxGlow)"/>
+  
+  <!-- Inner border (double-line effect) -->
+  <rect x="3" y="3" width="394" height="134" rx="6" ry="6" fill="none" stroke="#8C5FFF" stroke-width="0.3" opacity="0.6"/>
+</svg>
