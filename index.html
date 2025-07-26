@@ -75,7 +75,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+    <section id="hero" class="h-screen flex items-center relative overflow-hidden">
         <!-- Spline 3D Background (layer paling belakang) -->
         <div class="absolute inset-0 z-[0] opacity-70">
             <spline-viewer url="https://prod.spline.design/t-HGlyziqwnmhGKU/scene.splinecode" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></spline-viewer>
@@ -98,10 +98,10 @@
                         "Turn obstacles into opportunities with fast and efficient solutions."
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300 glow-effect">
+                        <a href="#contact" class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300 glow-effect btn-glitch" data-text="Chat With AI">
                             Chat With AI
                         </a>
-                        <a href="#about" class="btn btn-outline border-[#1C1C2E] text-[#D1D1E9] hover:bg-[#1C1C2E] hover:text-[#50C9F2] transition-colors duration-300">
+                        <a href="#about" class="btn btn-outline border-[#1C1C2E] text-[#D1D1E9] hover:bg-[#1C1C2E] hover:text-[#50C9F2] transition-colors duration-300 btn-glitch" data-text="Explore">
                             Explore
                         </a>
                     </div>
@@ -148,12 +148,12 @@
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-sora font-medium mb-4">Empowering Digital Innovation with Trust and Excellence</h2>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-sora font-medium mb-4 leading-tight">Empowering Digital Innovation with Trust and Excellence</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] mx-auto"></div>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
                     <p class="text-lg text-[#8A8A9E] mb-6">
                         <strong class="text-[#D1D1E9]">CV Lumbung Inovasi Digital</strong> is a company that provides IT consulting services, application development & integration, and training & mentoring. Founded in July 2021, we are committed to delivering innovative, trusted, and secure digital solutions.
                     </p>
@@ -227,7 +227,7 @@
                     </div>
                 </div>
                 
-                <div class="relative">
+                <div class="relative order-1 lg:order-2">
                     <div class="about-image-container relative z-10">
                         <img src="assets/images/portfolio-6.svg" alt="Lumbung Inovasi Digital Team" class="rounded-lg w-full">
                         <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] p-6 rounded-lg">

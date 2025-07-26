@@ -1,5 +1,5 @@
 <svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- AI Workflow Animation (n8n style) -->
+  <!-- AI Automation System (n8n style) -->
   <defs>
     <!-- Gradients -->
     <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -17,18 +17,27 @@
       <stop offset="100%" stop-color="#00CC8E" stop-opacity="1"/>
     </linearGradient>
     
-    <!-- Glow filter -->
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#D45420" stop-opacity="1"/>
+    </linearGradient>
+    
+    <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#E6C200" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Glow filters -->
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
     
-    <!-- Connection Path Animation -->
-    <path id="path1" d="M120,100 C160,100 160,200 200,200" stroke="none" fill="none"/>
-    <path id="path2" d="M280,200 C320,200 320,100 360,100" stroke="none" fill="none"/>
-    <path id="path3" d="M280,200 C320,200 320,300 360,300" stroke="none" fill="none"/>
-    <path id="path4" d="M440,100 C480,100 480,200 520,200" stroke="none" fill="none"/>
-    <path id="path5" d="M440,300 C480,300 480,200 520,200" stroke="none" fill="none"/>
+    <filter id="pulse" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      <animate attributeName="stdDeviation" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+    </filter>
   </defs>
   
   <!-- Background Grid -->
@@ -58,72 +67,161 @@
   
   <!-- Connection Paths -->
   <g>
-    <path d="M120,100 C160,100 160,200 200,200" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
-    <path d="M280,200 C320,200 320,100 360,100" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
-    <path d="M280,200 C320,200 320,300 360,300" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
-    <path d="M440,100 C480,100 480,200 520,200" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
-    <path d="M440,300 C480,300 480,200 520,200" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+    <!-- Primary flow -->
+    <path d="M90,60 C130,60 130,120 170,120" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="6 3" opacity="0.8"/>
+    <path d="M250,120 C290,120 290,80 330,80" stroke="#8C5FFF" stroke-width="2" fill="none" stroke-dasharray="6 3" opacity="0.8"/>
+    <path d="M250,120 C290,120 290,200 330,200" stroke="#8C5FFF" stroke-width="2" fill="none" stroke-dasharray="6 3" opacity="0.8"/>
+    <path d="M250,120 C290,120 290,320 330,320" stroke="#8C5FFF" stroke-width="2" fill="none" stroke-dasharray="6 3" opacity="0.8"/>
+    
+    <!-- Secondary connections -->
+    <path d="M90,200 C130,200 130,120 170,120" stroke="#00FFB2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.6"/>
+    <path d="M90,200 C130,200 130,250 170,250" stroke="#00FFB2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.6"/>
+    <path d="M210,220 L210,150" stroke="#FF6B35" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.6"/>
+    
+    <!-- AI Tools to Vector Database vertical connection -->
+    <path d="M370,110 L370,170" stroke="#00FFB2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+    
+    <!-- API Gateway to Vector Database vertical connection -->
+    <path d="M370,290 L370,230" stroke="#FF6B35" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+    
+    <!-- Output connections -->
+    <path d="M410,80 C450,80 450,150 490,150" stroke="#8C5FFF" stroke-width="2" fill="none" stroke-dasharray="6 3" opacity="0.8"/>
+    <path d="M410,320 C450,320 450,150 490,150" stroke="#FF6B35" stroke-width="2" fill="none" stroke-dasharray="6 3" opacity="0.8"/>
+    <!-- AI Curator to Output vertical connection -->
+    <path d="M530,180 L530,260" stroke="#8C5FFF" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
   </g>
   
   <!-- Workflow Nodes -->
   <g>
-    <!-- Input Node -->
-    <g id="workflow-input" class="workflow-node">
-      <rect x="40" y="70" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)"/>
-      <text x="80" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Input</text>
+    <!-- Input Nodes -->
+    <g id="workflow-trigger" class="workflow-node">
+      <rect x="10" y="30" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
+      <text x="50" y="55" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Webhook</text>
+      <text x="50" y="70" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Trigger</text>
     </g>
     
-    <!-- Processing Node -->
-    <g id="workflow-agent" class="workflow-node">
-      <rect x="200" y="170" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)"/>
-      <text x="240" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Agent</text>
+    <g id="workflow-data" class="workflow-node">
+      <rect x="10" y="170" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)" filter="url(#glow)"/>
+      <text x="50" y="205" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">WhatsApp</text>
     </g>
     
-    <!-- AI Node 1 -->
-    <g id="workflow-model" class="workflow-node">
-      <rect x="360" y="70" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)"/>
-      <text x="400" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Model</text>
+    
+    <!-- Processing Nodes -->
+    <g id="workflow-processor" class="workflow-node">
+      <rect x="170" y="90" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#pulse)"/>
+      <text x="210" y="125" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">AI Agent</text>
     </g>
     
-    <!-- AI Node 2 -->
-    <g id="workflow-tools" class="workflow-node">
-      <rect x="360" y="270" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)"/>
-      <text x="400" y="305" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Tools</text>
+    <g id="workflow-transform" class="workflow-node">
+      <rect x="170" y="220" width="80" height="60" rx="8" ry="8" fill="url(#orangeGradient)" filter="url(#glow)"/>
+      <text x="210" y="245" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Data</text>
+      <text x="210" y="260" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Transform</text>
     </g>
     
-    <!-- Output Node -->
-    <g id="workflow-output" class="workflow-node">
-      <rect x="520" y="170" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)"/>
-      <text x="560" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Output</text>
+    <!-- AI Service Nodes -->
+    <g id="workflow-llm" class="workflow-node">
+      <rect x="330" y="50" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)" filter="url(#pulse)"/>
+      <text x="370" y="85" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">AI Tools</text>
+    </g>
+    
+    <g id="workflow-vector" class="workflow-node">
+      <rect x="330" y="170" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
+      <text x="370" y="195" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Vector</text>
+      <text x="370" y="210" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Database</text>
+    </g>
+    
+    <g id="workflow-api" class="workflow-node">
+      <rect x="330" y="290" width="80" height="60" rx="8" ry="8" fill="url(#orangeGradient)" filter="url(#glow)"/>
+      <text x="370" y="315" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">API</text>
+      <text x="370" y="330" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Gateway</text>
+    </g>
+    
+    <!-- Output Nodes -->
+    <g id="workflow-response" class="workflow-node">
+      <rect x="490" y="120" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#glow)"/>
+      <text x="530" y="155" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">AI Curator</text>
+    </g>
+    
+    <g id="workflow-notification" class="workflow-node">
+      <rect x="490" y="260" width="80" height="60" rx="8" ry="8" fill="url(#yellowGradient)" filter="url(#glow)"/>
+      <text x="530" y="295" font-family="JetBrains Mono, monospace" font-size="10" fill="white" text-anchor="middle">Output</text>
     </g>
   </g>
   
   <!-- Animated Data Flow -->
   <g>
-    <!-- Path 1 Animation -->
-    <circle r="4" fill="#50C9F2">
-      <animateMotion path="M120,100 C160,100 160,200 200,200" dur="2s" repeatCount="indefinite"/>
+    <!-- Primary Flow Animations -->
+    <circle r="3" fill="#50C9F2" opacity="0.9">
+      <animateMotion path="M90,60 C130,60 130,120 170,120" dur="2.5s" repeatCount="indefinite"/>
     </circle>
     
-    <!-- Path 2 Animation -->
-    <circle r="4" fill="#8C5FFF">
-      <animateMotion path="M280,200 C320,200 320,100 360,100" dur="2s" repeatCount="indefinite"/>
+    <circle r="3" fill="#8C5FFF" opacity="0.9">
+      <animateMotion path="M250,120 C290,120 290,80 330,80" dur="2s" repeatCount="indefinite" begin="0.3s"/>
     </circle>
     
-    <!-- Path 3 Animation -->
-    <circle r="4" fill="#8C5FFF">
-      <animateMotion path="M280,200 C320,200 320,300 360,300" dur="2s" repeatCount="indefinite"/>
+    <!-- AI Agent to Vector Database bidirectional animation -->
+    <circle r="3" fill="#8C5FFF" opacity="0.9">
+      <animateMotion path="M250,120 C290,120 290,200 330,200" dur="0.5s" repeatCount="indefinite" begin="0.6s"/>
     </circle>
     
-    <!-- Path 4 Animation -->
-    <circle r="4" fill="#00FFB2">
-      <animateMotion path="M440,100 C480,100 480,200 520,200" dur="2s" repeatCount="indefinite"/>
+    <circle r="3" fill="#50C9F2" opacity="0.7">
+      <animateMotion path="M330,200 C290,200 290,120 250,120" dur="0.5s" repeatCount="indefinite" begin="0.85s"/>
     </circle>
     
-    <!-- Path 5 Animation -->
-    <circle r="4" fill="#8C5FFF">
-      <animateMotion path="M440,300 C480,300 480,200 520,200" dur="2s" repeatCount="indefinite"/>
+    <circle r="3" fill="#8C5FFF" opacity="0.9">
+      <animateMotion path="M250,120 C290,120 290,320 330,320" dur="3s" repeatCount="indefinite" begin="0.9s"/>
     </circle>
+    
+    <!-- Secondary Flow Animations -->
+    <circle r="2" fill="#00FFB2" opacity="0.7">
+      <animateMotion path="M90,200 C130,200 130,120 170,120" dur="2.8s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <!-- WhatsApp to Data Transform Animation -->
+    <circle r="2" fill="#00FFB2" opacity="0.7">
+      <animateMotion path="M90,200 C130,200 130,250 170,250" dur="2.6s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    
+    
+    <!-- Data Transform to AI Agent Animation -->
+    <circle r="2" fill="#FF6B35" opacity="0.7">
+      <animateMotion path="M210,220 L210,150" dur="1.8s" repeatCount="indefinite" begin="1.8s"/>
+    </circle>
+    
+    <!-- AI Tools to Vector Database bidirectional animation -->
+    <circle r="2" fill="#00FFB2" opacity="0.8">
+      <animateMotion path="M370,110 L370,170" dur="1s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    
+    <circle r="2" fill="#50C9F2" opacity="0.6">
+      <animateMotion path="M370,170 L370,110" dur="1s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <!-- API Gateway to Vector Database bidirectional animation -->
+    <circle r="2" fill="#FF6B35" opacity="0.8">
+      <animateMotion path="M370,290 L370,230" dur="0.8s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    
+    <circle r="2" fill="#50C9F2" opacity="0.6">
+      <animateMotion path="M370,230 L370,290" dur="0.8s" repeatCount="indefinite" begin="0.7s"/>
+    </circle>
+
+    <!-- Output Flow Animations -->
+    <circle r="3" fill="#8C5FFF" opacity="0.9">
+      <animateMotion path="M410,80 C450,80 450,150 490,150" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    
+    
+    <circle r="3" fill="#FF6B35" opacity="0.9">
+      <animateMotion path="M410,320 C450,320 450,150 490,150" dur="2.5s" repeatCount="indefinite" begin="1.8s"/>
+    </circle>
+    
+    <!-- AI Curator to Output Animation -->
+    <circle r="3" fill="#8C5FFF" opacity="0.9">
+      <animateMotion path="M530,180 L530,260" dur="1.5s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    
+    <!-- Pulsing Connection Points -->
   </g>
   
 </svg>
