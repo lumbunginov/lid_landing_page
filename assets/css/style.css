@@ -263,11 +263,9 @@ html {
 
 .terminal-text::after {
     content: '|';
-    position: absolute;
-    right: 0;
-    top: 0;
     color: var(--neon-blue);
     animation: blink-caret 0.75s step-end infinite;
+    margin-left: 2px;
 }
 
 @keyframes blink-caret {
