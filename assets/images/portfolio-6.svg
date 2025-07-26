@@ -1,0 +1,215 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Portfolio Item 6: Autonomous Drone Management System -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B1F" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#151538" stop-opacity="1"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B4D8" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0077B6" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#90E0EF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00B4D8" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Patterns -->
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none" stroke="#1C1C2E" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" rx="10" ry="10" fill="url(#bgGradient)"/>
+  <rect width="400" height="300" rx="10" ry="10" fill="url(#gridPattern)"/>
+  
+  <!-- Drone Management System -->
+  <g transform="translate(50, 40)">
+    <!-- Main Container -->
+    <rect x="0" y="0" width="300" height="220" rx="5" ry="5" fill="#151538" stroke="url(#accentGradient)" stroke-width="1" opacity="0.9" filter="url(#glow)"/>
+    
+    <!-- Title -->
+    <text x="150" y="20" font-family="'JetBrains Mono', monospace" font-size="12" fill="#00B4D8" text-anchor="middle" filter="url(#glow)">Drone Management System</text>
+    
+    <!-- Map View -->
+    <g transform="translate(20, 40)">
+      <!-- Map Background -->
+      <rect x="0" y="0" width="160" height="100" rx="5" ry="5" fill="#151538" stroke="url(#accentGradient)" stroke-width="1.5"/>
+      
+      <!-- Map Grid -->
+      <g opacity="0.5">
+        <line x1="0" y1="20" x2="160" y2="20" stroke="#00B4D8" stroke-width="0.5"/>
+        <line x1="0" y1="40" x2="160" y2="40" stroke="#00B4D8" stroke-width="0.5"/>
+        <line x1="0" y1="60" x2="160" y2="60" stroke="#00B4D8" stroke-width="0.5"/>
+        <line x1="0" y1="80" x2="160" y2="80" stroke="#00B4D8" stroke-width="0.5"/>
+        
+        <line x1="40" y1="0" x2="40" y2="100" stroke="#00B4D8" stroke-width="0.5"/>
+        <line x1="80" y1="0" x2="80" y2="100" stroke="#00B4D8" stroke-width="0.5"/>
+        <line x1="120" y1="0" x2="120" y2="100" stroke="#00B4D8" stroke-width="0.5"/>
+      </g>
+      
+      <!-- Map Features -->
+      <g>
+        <!-- Buildings -->
+        <rect x="10" y="10" width="20" height="15" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+        <rect x="15" y="35" width="15" height="10" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+        <rect x="50" y="15" width="25" height="20" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+        <rect x="90" y="10" width="30" height="25" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+        <rect x="130" y="20" width="20" height="15" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+        <rect x="20" y="60" width="30" height="20" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+        <rect x="70" y="70" width="25" height="15" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+        <rect x="120" y="65" width="20" height="20" fill="#151538" stroke="#333355" stroke-width="1" opacity="0.8"/>
+      </g>
+      
+      <!-- Drone Paths -->
+      <g stroke="#00B4D8" stroke-width="1" stroke-dasharray="4 2" opacity="0.7">
+        <!-- Path 1 -->
+        <path d="M 20,20 L 60,30 L 100,20 L 140,30 L 140,70 L 100,80 L 60,70 L 20,80" fill="none">
+          <animate attributeName="stroke-dashoffset" values="0;-12" dur="2s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Path 2 -->
+        <path d="M 40,10 L 40,90" fill="none">
+          <animate attributeName="stroke-dashoffset" values="0;-12" dur="2s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Path 3 -->
+        <path d="M 120,10 L 120,90" fill="none">
+          <animate attributeName="stroke-dashoffset" values="0;-12" dur="2s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      
+      <!-- Drones -->
+      <g>
+        <!-- Drone 1 -->
+        <g transform="translate(60, 30)">
+          <circle cx="0" cy="0" r="5" fill="#151538" stroke="url(#accentGradient)" stroke-width="1.5" filter="url(#glow)"/>
+          <line x1="-5" y1="0" x2="5" y2="0" stroke="#00B4D8" stroke-width="1"/>
+          <line x1="0" y1="-5" x2="0" y2="5" stroke="#00B4D8" stroke-width="1"/>
+          <circle cx="0" cy="0" r="2" fill="#90E0EF">
+            <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite"/>
+          </circle>
+          <animate attributeName="transform" values="translate(60, 30);translate(65, 32);translate(60, 30)" dur="5s" repeatCount="indefinite"/>
+        </g>
+        
+        <!-- Drone 2 -->
+        <g transform="translate(100, 20)">
+          <circle cx="0" cy="0" r="5" fill="#151538" stroke="url(#accentGradient)" stroke-width="1.5" filter="url(#glow)"/>
+          <line x1="-5" y1="0" x2="5" y2="0" stroke="#00B4D8" stroke-width="1"/>
+          <line x1="0" y1="-5" x2="0" y2="5" stroke="#00B4D8" stroke-width="1"/>
+          <circle cx="0" cy="0" r="2" fill="#90E0EF">
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" repeatCount="indefinite"/>
+          </circle>
+          <animate attributeName="transform" values="translate(100, 20);translate(105, 18);translate(100, 20)" dur="4s" repeatCount="indefinite"/>
+        </g>
+        
+        <!-- Drone 3 -->
+        <g transform="translate(40, 50)">
+          <circle cx="0" cy="0" r="5" fill="#151538" stroke="url(#accentGradient)" stroke-width="1.5" filter="url(#glow)"/>
+          <line x1="-5" y1="0" x2="5" y2="0" stroke="#00B4D8" stroke-width="1"/>
+          <line x1="0" y1="-5" x2="0" y2="5" stroke="#00B4D8" stroke-width="1"/>
+          <circle cx="0" cy="0" r="2" fill="#90E0EF">
+            <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1s" repeatCount="indefinite"/>
+          </circle>
+          <animate attributeName="transform" values="translate(40, 50);translate(40, 55);translate(40, 50)" dur="6s" repeatCount="indefinite"/>
+        </g>
+        
+        <!-- Drone 4 -->
+        <g transform="translate(120, 70)">
+          <circle cx="0" cy="0" r="5" fill="#151538" stroke="url(#accentGradient)" stroke-width="1.5" filter="url(#glow)"/>
+          <line x1="-5" y1="0" x2="5" y2="0" stroke="#00B4D8" stroke-width="1"/>
+          <line x1="0" y1="-5" x2="0" y2="5" stroke="#00B4D8" stroke-width="1"/>
+          <circle cx="0" cy="0" r="2" fill="#90E0EF">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1s" repeatCount="indefinite"/>
+          </circle>
+          <animate attributeName="transform" values="translate(120, 70);translate(120, 65);translate(120, 70)" dur="5.5s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+    
+    <!-- Drone Control Panel -->
+    <g transform="translate(190, 40)">
+      <!-- Panel Background -->
+      <rect x="0" y="0" width="90" height="100" rx="5" ry="5" fill="#151538" stroke="url(#accentGradient)" stroke-width="1.5"/>
+      
+      <!-- Drone Details -->
+      <text x="45" y="15" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FFFFFF" text-anchor="middle">Drone Fleet</text>
+      
+      <!-- Drone List -->
+      <g>
+        <text x="5" y="30" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Drone-01</text>
+        <text x="65" y="30" font-family="'JetBrains Mono', monospace" font-size="6" fill="#90E0EF">Active</text>
+        
+        <text x="5" y="45" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Drone-02</text>
+        <text x="65" y="45" font-family="'JetBrains Mono', monospace" font-size="6" fill="#90E0EF">Active</text>
+        
+        <text x="5" y="60" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Drone-03</text>
+        <text x="65" y="60" font-family="'JetBrains Mono', monospace" font-size="6" fill="#90E0EF">Active</text>
+        
+        <text x="5" y="75" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Drone-04</text>
+        <text x="65" y="75" font-family="'JetBrains Mono', monospace" font-size="6" fill="#90E0EF">Active</text>
+        
+        <text x="5" y="90" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Drone-05</text>
+        <text x="65" y="90" font-family="'JetBrains Mono', monospace" font-size="6" fill="#333355">Charging</text>
+      </g>
+    </g>
+    
+    <!-- System Metrics -->
+    <g transform="translate(20, 150)">
+      <!-- Battery Status -->
+      <text x="0" y="10" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FFFFFF">Fleet Battery:</text>
+      <rect x="90" y="5" width="80" height="10" rx="5" ry="5" fill="#151538" stroke="#333355" stroke-width="1"/>
+      <rect x="90" y="5" width="60" height="10" rx="5" ry="5" fill="url(#accentGradient)">
+        <animate attributeName="width" values="60;58;60" dur="10s" repeatCount="indefinite"/>
+      </rect>
+      <text x="175" y="13" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FFFFFF">75%</text>
+      
+      <!-- Mission Status -->
+      <text x="0" y="30" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FFFFFF">Active Missions: <tspan fill="#00B4D8">3</tspan></text>
+      <text x="0" y="45" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FFFFFF">Area Coverage: <tspan fill="#00B4D8">68%</tspan></text>
+      <text x="0" y="60" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FFFFFF">Data Collected: <tspan fill="#00B4D8">1.2 TB</tspan></text>
+    </g>
+    
+    <!-- Mission Details -->
+    <g transform="translate(190, 150)">
+      <text x="0" y="10" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FFFFFF">Current Missions:</text>
+      
+      <text x="0" y="25" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Aerial Mapping</text>
+      <text x="0" y="35" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Infrastructure Inspection</text>
+      <text x="0" y="45" font-family="'JetBrains Mono', monospace" font-size="6" fill="#00B4D8">● Environmental Monitoring</text>
+      <text x="0" y="55" font-family="'JetBrains Mono', monospace" font-size="6" fill="#333355">● Agricultural Survey (Scheduled)</text>
+    </g>
+  </g>
+  
+  <!-- Animated Elements -->
+  <g>
+    <!-- Scan Line Effect -->
+    <rect x="0" y="0" width="400" height="2" fill="url(#accentGradient)" opacity="0.3">
+      <animate attributeName="y" values="0;300;0" dur="10s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Pulsing Corner Accents -->
+    <circle cx="10" cy="10" r="3" fill="#00B4D8" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="390" cy="10" r="3" fill="#00B4D8" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="10" cy="290" r="3" fill="#00B4D8" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="390" cy="290" r="3" fill="#00B4D8" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

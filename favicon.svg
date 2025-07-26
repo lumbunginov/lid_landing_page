@@ -1,0 +1,59 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Favicon for Lumbung Inovasi Digital -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B1F" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#151538" stop-opacity="1"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50C9F2" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3A95B3" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" ry="6" fill="url(#bgGradient)"/>
+  
+  <!-- LID Logo Symbol -->
+  <g transform="translate(4, 4)" filter="url(#glow)">
+    <!-- L Shape -->
+    <path d="M4,4 L4,20 L12,20" stroke="url(#accentGradient)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- I Shape -->
+    <line x1="16" y1="4" x2="16" y2="20" stroke="url(#accentGradient)" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- D Shape -->
+    <path d="M20,4 L20,20 C24,20 24,4 20,4 Z" stroke="url(#accentGradient)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Circuit Elements -->
+  <g stroke="#50C9F2" stroke-width="0.5" opacity="0.6">
+    <!-- Connection Lines -->
+    <line x1="4" y1="16" x2="8" y2="16" stroke-dasharray="1 1"/>
+    <line x1="24" y1="16" x2="28" y2="16" stroke-dasharray="1 1"/>
+    <line x1="16" y1="4" x2="16" y2="8" stroke-dasharray="1 1"/>
+    <line x1="16" y1="24" x2="16" y2="28" stroke-dasharray="1 1"/>
+    
+    <!-- Corner Nodes -->
+    <circle cx="4" cy="4" r="1" fill="#50C9F2" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="28" cy="4" r="1" fill="#50C9F2" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="4" cy="28" r="1" fill="#50C9F2" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="28" cy="28" r="1" fill="#50C9F2" opacity="0.8">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

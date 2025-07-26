@@ -1,0 +1,59 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Client Logo 2 - AI Company -->
+  <defs>
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Gradient -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8C5FFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#6A47C0" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo Container -->
+  <g transform="translate(50, 15)">
+    <!-- Brain Symbol -->
+    <path d="M50,0 C77.6,0 100,11.2 100,25 C100,38.8 77.6,50 50,50 C22.4,50 0,38.8 0,25 C0,11.2 22.4,0 50,0 Z" fill="#0B0B1F" stroke="url(#logoGradient)" stroke-width="2" filter="url(#glow)"/>
+    
+    <!-- Neural Network Lines -->
+    <path d="M20,15 L40,10 L60,20 L80,15" fill="none" stroke="#8C5FFF" stroke-width="1" opacity="0.6"/>
+    <path d="M20,35 L40,40 L60,30 L80,35" fill="none" stroke="#8C5FFF" stroke-width="1" opacity="0.6"/>
+    <path d="M20,15 L20,35" fill="none" stroke="#8C5FFF" stroke-width="1" opacity="0.6"/>
+    <path d="M40,10 L40,40" fill="none" stroke="#8C5FFF" stroke-width="1" opacity="0.6"/>
+    <path d="M60,20 L60,30" fill="none" stroke="#8C5FFF" stroke-width="1" opacity="0.6"/>
+    <path d="M80,15 L80,35" fill="none" stroke="#8C5FFF" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Nodes -->
+    <circle cx="20" cy="15" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="40" cy="10" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="20" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="80" cy="15" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="20" cy="35" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="40" cy="40" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="30" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="80" cy="35" r="3" fill="#8C5FFF" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Logo Text -->
+    <text x="50" y="27" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FFFFFF" text-anchor="middle">NEURALINK</text>
+  </g>
+</svg>

@@ -1,0 +1,175 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neural Network Background Pattern -->
+  <defs>
+    <!-- Gradient for nodes -->
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50C9F2" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#8C5FFF" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="none"/>
+  
+  <!-- Neural Network Nodes -->
+  <!-- Input Layer -->
+  <circle cx="100" cy="150" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="100" cy="250" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="100" cy="350" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="100" cy="450" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  
+  <!-- Hidden Layer 1 -->
+  <circle cx="300" cy="100" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="300" cy="200" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="300" cy="300" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="300" cy="400" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="300" cy="500" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  
+  <!-- Hidden Layer 2 -->
+  <circle cx="500" cy="150" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="500" cy="250" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="500" cy="350" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="500" cy="450" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  
+  <!-- Output Layer -->
+  <circle cx="700" cy="200" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="700" cy="300" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  <circle cx="700" cy="400" r="8" fill="url(#nodeGradient)" filter="url(#glow)"/>
+  
+  <!-- Connections between nodes -->
+  <!-- Input to Hidden Layer 1 -->
+  <g stroke="#1C1C2E" stroke-width="1" opacity="0.3">
+    <!-- Input 1 to all Hidden 1 -->
+    <line x1="100" y1="150" x2="300" y2="100"/>
+    <line x1="100" y1="150" x2="300" y2="200"/>
+    <line x1="100" y1="150" x2="300" y2="300"/>
+    <line x1="100" y1="150" x2="300" y2="400"/>
+    <line x1="100" y1="150" x2="300" y2="500"/>
+    
+    <!-- Input 2 to all Hidden 1 -->
+    <line x1="100" y1="250" x2="300" y2="100"/>
+    <line x1="100" y1="250" x2="300" y2="200"/>
+    <line x1="100" y1="250" x2="300" y2="300"/>
+    <line x1="100" y1="250" x2="300" y2="400"/>
+    <line x1="100" y1="250" x2="300" y2="500"/>
+    
+    <!-- Input 3 to all Hidden 1 -->
+    <line x1="100" y1="350" x2="300" y2="100"/>
+    <line x1="100" y1="350" x2="300" y2="200"/>
+    <line x1="100" y1="350" x2="300" y2="300"/>
+    <line x1="100" y1="350" x2="300" y2="400"/>
+    <line x1="100" y1="350" x2="300" y2="500"/>
+    
+    <!-- Input 4 to all Hidden 1 -->
+    <line x1="100" y1="450" x2="300" y2="100"/>
+    <line x1="100" y1="450" x2="300" y2="200"/>
+    <line x1="100" y1="450" x2="300" y2="300"/>
+    <line x1="100" y1="450" x2="300" y2="400"/>
+    <line x1="100" y1="450" x2="300" y2="500"/>
+  </g>
+  
+  <!-- Hidden Layer 1 to Hidden Layer 2 -->
+  <g stroke="#1C1C2E" stroke-width="1" opacity="0.3">
+    <!-- Connect each node in Hidden 1 to each node in Hidden 2 -->
+    <!-- Hidden 1 Node 1 to all Hidden 2 -->
+    <line x1="300" y1="100" x2="500" y2="150"/>
+    <line x1="300" y1="100" x2="500" y2="250"/>
+    <line x1="300" y1="100" x2="500" y2="350"/>
+    <line x1="300" y1="100" x2="500" y2="450"/>
+    
+    <!-- Hidden 1 Node 2 to all Hidden 2 -->
+    <line x1="300" y1="200" x2="500" y2="150"/>
+    <line x1="300" y1="200" x2="500" y2="250"/>
+    <line x1="300" y1="200" x2="500" y2="350"/>
+    <line x1="300" y1="200" x2="500" y2="450"/>
+    
+    <!-- Hidden 1 Node 3 to all Hidden 2 -->
+    <line x1="300" y1="300" x2="500" y2="150"/>
+    <line x1="300" y1="300" x2="500" y2="250"/>
+    <line x1="300" y1="300" x2="500" y2="350"/>
+    <line x1="300" y1="300" x2="500" y2="450"/>
+    
+    <!-- Hidden 1 Node 4 to all Hidden 2 -->
+    <line x1="300" y1="400" x2="500" y2="150"/>
+    <line x1="300" y1="400" x2="500" y2="250"/>
+    <line x1="300" y1="400" x2="500" y2="350"/>
+    <line x1="300" y1="400" x2="500" y2="450"/>
+    
+    <!-- Hidden 1 Node 5 to all Hidden 2 -->
+    <line x1="300" y1="500" x2="500" y2="150"/>
+    <line x1="300" y1="500" x2="500" y2="250"/>
+    <line x1="300" y1="500" x2="500" y2="350"/>
+    <line x1="300" y1="500" x2="500" y2="450"/>
+  </g>
+  
+  <!-- Hidden Layer 2 to Output -->
+  <g stroke="#1C1C2E" stroke-width="1" opacity="0.3">
+    <!-- Connect each node in Hidden 2 to each node in Output -->
+    <!-- Hidden 2 Node 1 to all Output -->
+    <line x1="500" y1="150" x2="700" y2="200"/>
+    <line x1="500" y1="150" x2="700" y2="300"/>
+    <line x1="500" y1="150" x2="700" y2="400"/>
+    
+    <!-- Hidden 2 Node 2 to all Output -->
+    <line x1="500" y1="250" x2="700" y2="200"/>
+    <line x1="500" y1="250" x2="700" y2="300"/>
+    <line x1="500" y1="250" x2="700" y2="400"/>
+    
+    <!-- Hidden 2 Node 3 to all Output -->
+    <line x1="500" y1="350" x2="700" y2="200"/>
+    <line x1="500" y1="350" x2="700" y2="300"/>
+    <line x1="500" y1="350" x2="700" y2="400"/>
+    
+    <!-- Hidden 2 Node 4 to all Output -->
+    <line x1="500" y1="450" x2="700" y2="200"/>
+    <line x1="500" y1="450" x2="700" y2="300"/>
+    <line x1="500" y1="450" x2="700" y2="400"/>
+  </g>
+  
+  <!-- Animated Data Flow -->
+  <g>
+    <!-- Input to Hidden 1 -->
+    <circle r="3" fill="#50C9F2">
+      <animate attributeName="cx" values="100;300" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="150;100" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="3" fill="#50C9F2">
+      <animate attributeName="cx" values="100;300" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="250;300" dur="4s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="3" fill="#50C9F2">
+      <animate attributeName="cx" values="100;300" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="350;500" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Hidden 1 to Hidden 2 -->
+    <circle r="3" fill="#8C5FFF">
+      <animate attributeName="cx" values="300;500" dur="3.2s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="200;150" dur="3.2s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="3" fill="#8C5FFF">
+      <animate attributeName="cx" values="300;500" dur="2.8s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="300;350" dur="2.8s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Hidden 2 to Output -->
+    <circle r="3" fill="#50C9F2">
+      <animate attributeName="cx" values="500;700" dur="3.7s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="250;300" dur="3.7s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="3" fill="#50C9F2">
+      <animate attributeName="cx" values="500;700" dur="4.2s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="450;400" dur="4.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Client Logo 1 - Tech Company -->
+  <defs>
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Gradient -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50C9F2" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3A95B3" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo Container -->
+  <g transform="translate(40, 15)">
+    <!-- Tech Symbol -->
+    <path d="M30,0 L90,0 L120,25 L90,50 L30,50 L0,25 Z" fill="#0B0B1F" stroke="url(#logoGradient)" stroke-width="2" filter="url(#glow)"/>
+    
+    <!-- Inner Circuit -->
+    <path d="M35,10 L85,10 L105,25 L85,40 L35,40 L15,25 Z" fill="none" stroke="#50C9F2" stroke-width="1" stroke-dasharray="2 1" opacity="0.6"/>
+    
+    <!-- Logo Text -->
+    <text x="60" y="29" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FFFFFF" text-anchor="middle">TECHWAVE</text>
+    
+    <!-- Dots -->
+    <circle cx="35" cy="25" r="3" fill="#50C9F2" filter="url(#glow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="85" cy="25" r="3" fill="#50C9F2" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,133 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hero Background with Futuristic Elements -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B1F" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#151538" stop-opacity="1"/>
+    </linearGradient>
+    
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#50C9F2" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#50C9F2" stop-opacity="0"/>
+    </radialGradient>
+    
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#50C9F2" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#50C9F2" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#50C9F2" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Patterns -->
+    <pattern id="gridPattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none" stroke="#1C1C2E" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+    
+    <pattern id="smallGridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none" stroke="#1C1C2E" stroke-width="0.2" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- Grid Patterns -->
+  <rect width="1920" height="1080" fill="url(#gridPattern)"/>
+  <rect width="1920" height="1080" fill="url(#smallGridPattern)"/>
+  
+  <!-- Glow Effect -->
+  <circle cx="960" cy="400" r="500" fill="url(#glowGradient)" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.3;0.2" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Horizontal Lines -->
+  <g opacity="0.3">
+    <line x1="0" y1="200" x2="1920" y2="200" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1920" y2="400" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="0" y1="600" x2="1920" y2="600" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="0" y1="800" x2="1920" y2="800" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="0" y1="1000" x2="1920" y2="1000" stroke="url(#lineGradient)" stroke-width="1"/>
+  </g>
+  
+  <!-- Vertical Lines -->
+  <g opacity="0.3">
+    <line x1="400" y1="0" x2="400" y2="1080" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="1080" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="1200" y1="0" x2="1200" y2="1080" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="1600" y1="0" x2="1600" y2="1080" stroke="url(#lineGradient)" stroke-width="1"/>
+  </g>
+  
+  <!-- Floating Particles -->
+  <g>
+    <!-- Group 1 -->
+    <circle cx="300" cy="200" r="2" fill="#50C9F2" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="200;220;200" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="220" r="1" fill="#50C9F2" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="220;230;220" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="180" r="1.5" fill="#50C9F2" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="180;190;180" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Group 2 -->
+    <circle cx="1600" cy="300" r="2" fill="#50C9F2" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="300;320;300" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1620" cy="320" r="1" fill="#50C9F2" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="320;330;320" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1580" cy="280" r="1.5" fill="#50C9F2" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="280;290;280" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Group 3 -->
+    <circle cx="900" cy="800" r="2" fill="#50C9F2" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="800;820;800" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="920" cy="820" r="1" fill="#50C9F2" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="820;830;820" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="880" cy="780" r="1.5" fill="#50C9F2" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="780;790;780" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Accent Lines -->
+  <g opacity="0.5" filter="url(#glow)">
+    <!-- Diagonal Lines -->
+    <line x1="0" y1="0" x2="500" y2="500" stroke="#50C9F2" stroke-width="0.5" opacity="0.2"/>
+    <line x1="1420" y1="0" x2="1920" y2="500" stroke="#50C9F2" stroke-width="0.5" opacity="0.2"/>
+    <line x1="0" y1="580" x2="500" y2="1080" stroke="#50C9F2" stroke-width="0.5" opacity="0.2"/>
+    <line x1="1420" y1="580" x2="1920" y2="1080" stroke="#50C9F2" stroke-width="0.5" opacity="0.2"/>
+    
+    <!-- Curved Paths -->
+    <path d="M0,300 Q960,100 1920,300" fill="none" stroke="#50C9F2" stroke-width="0.5" opacity="0.1"/>
+    <path d="M0,780 Q960,980 1920,780" fill="none" stroke="#50C9F2" stroke-width="0.5" opacity="0.1"/>
+  </g>
+  
+  <!-- Scan Line Effect -->
+  <rect width="1920" height="4" fill="#50C9F2" opacity="0.1">
+    <animate attributeName="y" values="0;1080;0" dur="10s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Vignette Effect -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="5s" repeatCount="indefinite"/>
+  </rect>
+</svg>

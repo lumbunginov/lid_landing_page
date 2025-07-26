@@ -1,0 +1,59 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Client Logo 5 - Blockchain Company -->
+  <defs>
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Gradient -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD15F" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#C0A047" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo Container -->
+  <g transform="translate(40, 15)">
+    <!-- Blockchain Symbol -->
+    <g transform="translate(0, 0)">
+      <!-- Block 1 -->
+      <rect x="0" y="10" width="25" height="25" rx="3" ry="3" fill="#0B0B1F" stroke="url(#logoGradient)" stroke-width="2" filter="url(#glow)"/>
+      <!-- Block 2 -->
+      <rect x="30" y="0" width="25" height="25" rx="3" ry="3" fill="#0B0B1F" stroke="url(#logoGradient)" stroke-width="2" filter="url(#glow)"/>
+      <!-- Block 3 -->
+      <rect x="60" y="10" width="25" height="25" rx="3" ry="3" fill="#0B0B1F" stroke="url(#logoGradient)" stroke-width="2" filter="url(#glow)"/>
+      <!-- Block 4 -->
+      <rect x="90" y="0" width="25" height="25" rx="3" ry="3" fill="#0B0B1F" stroke="url(#logoGradient)" stroke-width="2" filter="url(#glow)"/>
+      
+      <!-- Connections -->
+      <line x1="25" y1="22" x2="30" y2="12" stroke="#FFD15F" stroke-width="1.5" stroke-dasharray="2 1"/>
+      <line x1="55" y1="12" x2="60" y2="22" stroke="#FFD15F" stroke-width="1.5" stroke-dasharray="2 1"/>
+      <line x1="85" y1="22" x2="90" y2="12" stroke="#FFD15F" stroke-width="1.5" stroke-dasharray="2 1"/>
+      
+      <!-- Connection Points -->
+      <circle cx="25" cy="22" r="3" fill="#FFD15F" filter="url(#glow)">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="30" cy="12" r="3" fill="#FFD15F" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="55" cy="12" r="3" fill="#FFD15F" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="60" cy="22" r="3" fill="#FFD15F" filter="url(#glow)">
+        <animate attributeName="opacity" values="1;0.6;1" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="85" cy="22" r="3" fill="#FFD15F" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="90" cy="12" r="3" fill="#FFD15F" filter="url(#glow)">
+        <animate attributeName="opacity" values="1;0.5;1" dur="1.9s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Logo Text -->
+    <text x="60" y="45" font-family="'JetBrains Mono', monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">CHAINTECH</text>
+  </g>
+</svg>

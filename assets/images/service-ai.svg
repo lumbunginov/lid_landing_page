@@ -1,0 +1,60 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- AI Service Icon -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50C9F2" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3A95B3" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="50" fill="#0B0B1F" stroke="url(#iconGradient)" stroke-width="2" filter="url(#glow)"/>
+  
+  <!-- Brain Icon -->
+  <g transform="translate(30, 30)" fill="none" stroke="url(#iconGradient)" stroke-width="2" filter="url(#glow)">
+    <!-- Brain Outline -->
+    <path d="M30,0 C46.5,0 60,13.5 60,30 C60,46.5 46.5,60 30,60 C13.5,60 0,46.5 0,30 C0,13.5 13.5,0 30,0 Z" stroke-opacity="0.5"/>
+    
+    <!-- Left Hemisphere -->
+    <path d="M30,10 C20,10 12,15 10,25 C8,35 12,45 20,50" />
+    
+    <!-- Right Hemisphere -->
+    <path d="M30,10 C40,10 48,15 50,25 C52,35 48,45 40,50" />
+    
+    <!-- Connections -->
+    <path d="M20,20 L40,20 M15,30 L45,30 M20,40 L40,40" stroke-dasharray="2 1" stroke-opacity="0.8"/>
+    
+    <!-- Nodes -->
+    <circle cx="20" cy="20" r="3" fill="#50C9F2">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="40" cy="20" r="3" fill="#50C9F2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="15" cy="30" r="3" fill="#50C9F2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="45" cy="30" r="3" fill="#50C9F2">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="20" cy="40" r="3" fill="#50C9F2">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="40" cy="40" r="3" fill="#50C9F2">
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Pulsing Effect -->
+  <circle cx="60" cy="60" r="55" fill="none" stroke="url(#iconGradient)" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="55;60;55" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

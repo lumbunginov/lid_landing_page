@@ -1,0 +1,38 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- LID Logo with Futuristic Design -->
+  
+  <!-- L -->
+  <path d="M20 10V40H35" stroke="#D1D1E9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- I -->
+  <path d="M45 10V40" stroke="#D1D1E9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- D -->
+  <path d="M55 10V40H65C72 40 75 35 75 25C75 15 72 10 65 10H55Z" stroke="#D1D1E9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Digital Circuit Elements -->
+  <circle cx="20" cy="10" r="3" fill="#50C9F2"/>
+  <circle cx="45" cy="10" r="3" fill="#50C9F2"/>
+  <circle cx="55" cy="10" r="3" fill="#50C9F2"/>
+  <circle cx="20" cy="40" r="3" fill="#8C5FFF"/>
+  <circle cx="45" cy="40" r="3" fill="#8C5FFF"/>
+  <circle cx="55" cy="40" r="3" fill="#8C5FFF"/>
+  
+  <!-- Connection Lines -->
+  <path d="M23 10H42" stroke="#50C9F2" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M48 10H52" stroke="#50C9F2" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M23 40H42" stroke="#8C5FFF" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M48 40H52" stroke="#8C5FFF" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 2"/>
+  
+  <!-- Company Name -->
+  <text x="85" y="25" font-family="Sora, sans-serif" font-size="14" font-weight="600" fill="#D1D1E9">Lumbung Inovasi</text>
+  <text x="85" y="40" font-family="Sora, sans-serif" font-size="14" font-weight="600" fill="#50C9F2">Digital</text>
+  
+  <!-- Glow Effect -->
+  <circle cx="20" cy="10" r="5" fill="#50C9F2" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="55" cy="40" r="5" fill="#8C5FFF" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+</svg>

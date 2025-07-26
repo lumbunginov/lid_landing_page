@@ -1,0 +1,141 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- AI Workflow Animation (n8n style) -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50C9F2" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3A95B3" stop-opacity="1"/>
+    </linearGradient>
+    
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8C5FFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#6A47C0" stop-opacity="1"/>
+    </linearGradient>
+    
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFB2" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00CC8E" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Connection Path Animation -->
+    <path id="path1" d="M120,100 C160,100 160,200 200,200" stroke="none" fill="none"/>
+    <path id="path2" d="M280,200 C320,200 320,100 360,100" stroke="none" fill="none"/>
+    <path id="path3" d="M280,200 C320,200 320,300 360,300" stroke="none" fill="none"/>
+    <path id="path4" d="M440,100 C480,100 480,200 520,200" stroke="none" fill="none"/>
+    <path id="path5" d="M440,300 C480,300 480,200 520,200" stroke="none" fill="none"/>
+  </defs>
+  
+  <!-- Background Grid -->
+  <g stroke="#1C1C2E" stroke-width="0.5" opacity="0.2">
+    <!-- Horizontal Lines -->
+    <line x1="0" y1="50" x2="600" y2="50" />
+    <line x1="0" y1="100" x2="600" y2="100" />
+    <line x1="0" y1="150" x2="600" y2="150" />
+    <line x1="0" y1="200" x2="600" y2="200" />
+    <line x1="0" y1="250" x2="600" y2="250" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="0" y1="350" x2="600" y2="350" />
+    
+    <!-- Vertical Lines -->
+    <line x1="50" y1="0" x2="50" y2="400" />
+    <line x1="100" y1="0" x2="100" y2="400" />
+    <line x1="150" y1="0" x2="150" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="250" y1="0" x2="250" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="350" y1="0" x2="350" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+    <line x1="450" y1="0" x2="450" y2="400" />
+    <line x1="500" y1="0" x2="500" y2="400" />
+    <line x1="550" y1="0" x2="550" y2="400" />
+  </g>
+  
+  <!-- Connection Paths -->
+  <g>
+    <path d="M120,100 C160,100 160,200 200,200" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+    <path d="M280,200 C320,200 320,100 360,100" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+    <path d="M280,200 C320,200 320,300 360,300" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+    <path d="M440,100 C480,100 480,200 520,200" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+    <path d="M440,300 C480,300 480,200 520,200" stroke="#50C9F2" stroke-width="2" fill="none" stroke-dasharray="4 2" opacity="0.8"/>
+  </g>
+  
+  <!-- Workflow Nodes -->
+  <g>
+    <!-- Input Node -->
+    <rect x="40" y="70" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
+    <text x="80" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Input</text>
+    
+    <!-- Processing Node -->
+    <rect x="200" y="170" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#glow)"/>
+    <text x="240" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Process</text>
+    
+    <!-- AI Node 1 -->
+    <rect x="360" y="70" width="80" height="60" rx="8" ry="8" fill="url(#greenGradient)" filter="url(#glow)"/>
+    <text x="400" y="105" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">AI Model</text>
+    
+    <!-- AI Node 2 -->
+    <rect x="360" y="270" width="80" height="60" rx="8" ry="8" fill="url(#purpleGradient)" filter="url(#glow)"/>
+    <text x="400" y="305" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Analysis</text>
+    
+    <!-- Output Node -->
+    <rect x="520" y="170" width="80" height="60" rx="8" ry="8" fill="url(#blueGradient)" filter="url(#glow)"/>
+    <text x="560" y="205" font-family="JetBrains Mono, monospace" font-size="12" fill="white" text-anchor="middle">Output</text>
+  </g>
+  
+  <!-- Animated Data Flow -->
+  <g>
+    <!-- Path 1 Animation -->
+    <circle r="4" fill="#50C9F2">
+      <animateMotion path="M120,100 C160,100 160,200 200,200" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Path 2 Animation -->
+    <circle r="4" fill="#8C5FFF">
+      <animateMotion path="M280,200 C320,200 320,100 360,100" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Path 3 Animation -->
+    <circle r="4" fill="#8C5FFF">
+      <animateMotion path="M280,200 C320,200 320,300 360,300" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Path 4 Animation -->
+    <circle r="4" fill="#00FFB2">
+      <animateMotion path="M440,100 C480,100 480,200 520,200" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Path 5 Animation -->
+    <circle r="4" fill="#8C5FFF">
+      <animateMotion path="M440,300 C480,300 480,200 520,200" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Pulsing Effect on Nodes -->
+  <g opacity="0.3">
+    <rect x="40" y="70" width="80" height="60" rx="8" ry="8" fill="#50C9F2">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="200" y="170" width="80" height="60" rx="8" ry="8" fill="#8C5FFF">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="360" y="70" width="80" height="60" rx="8" ry="8" fill="#00FFB2">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="360" y="270" width="80" height="60" rx="8" ry="8" fill="#8C5FFF">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2.7s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="520" y="170" width="80" height="60" rx="8" ry="8" fill="#50C9F2">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
