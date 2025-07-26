@@ -58,10 +58,10 @@ marquee client logo
 - R&D
 
 ## Portofolio
-- Website Desa Ngadipuro
+- Website Ngadipuro Village
 - Perkap.com
-- Sistem informasi wajib tera
-- IKM Kota Blitar
+- SIWATU
+- SIKM Kota Blitar
 - BLITARA – Chatbot AI
 
 ## Contact US
