@@ -619,6 +619,16 @@ body::before {
     gap: 1.5rem;
 }
 
+/* Footer Mobile Layout - Company and Information in 2 columns */
+@media (max-width: 768px) {
+    .footer-mobile-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+}
+
 /* Mobile and tablet layout */
 @media (max-width: 1024px) {
     #portfolio-grid {
