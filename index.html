@@ -61,6 +61,84 @@
             justify-content: center;
             width: 100%;
             height: 100%;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+        
+        /* Hide robot during glitch animation */
+        #n8n-chat .chat-window-toggle.chat-glitch::after {
+            opacity: 0;
+        }
+        
+        /* Glitch animation for chat toggle - similar to portfolio buttons */
+        #n8n-chat .chat-window-toggle.chat-glitch {
+            position: relative;
+        }
+        
+        #n8n-chat .chat-window-toggle.chat-glitch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #ff0080, #ff0040);
+            border-radius: inherit;
+            animation: chatGlitch1 0.15s infinite;
+            z-index: -1;
+        }
+        
+        /* Override the ::after for glitch animation only */
+        #n8n-chat .chat-window-toggle.chat-glitch::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #00ff80, #00ff40);
+            border-radius: inherit;
+            animation: chatGlitch2 0.15s infinite;
+            z-index: -2;
+            opacity: 1 !important;
+        }
+        
+        @keyframes chatGlitch1 {
+            0%, 14%, 15%, 49%, 50%, 99%, 100% {
+                transform: translate(0);
+                filter: hue-rotate(0deg);
+            }
+            1%, 3%, 5%, 7%, 9%, 11%, 13% {
+                transform: translate(-8px, 6px);
+                filter: hue-rotate(90deg) saturate(200%);
+            }
+            16%, 18%, 20%, 22%, 24%, 26%, 28% {
+                transform: translate(10px, -8px);
+                filter: hue-rotate(180deg) saturate(250%);
+            }
+            51%, 53%, 55%, 57%, 59%, 61%, 63% {
+                transform: translate(-6px, 4px);
+                filter: hue-rotate(270deg) saturate(180%);
+            }
+        }
+        
+        @keyframes chatGlitch2 {
+            0%, 20%, 21%, 62%, 63%, 99%, 100% {
+                transform: translate(0);
+                filter: hue-rotate(0deg);
+            }
+            2%, 4%, 6%, 8%, 10%, 12%, 14% {
+                transform: translate(7px, -5px);
+                filter: hue-rotate(45deg) saturate(220%);
+            }
+            22%, 24%, 26%, 28%, 30%, 32%, 34% {
+                transform: translate(-9px, 7px);
+                filter: hue-rotate(135deg) saturate(300%);
+            }
+            64%, 66%, 68%, 70%, 72%, 74%, 76% {
+                transform: translate(5px, -6px);
+                filter: hue-rotate(225deg) saturate(160%);
+            }
         }
         
         /* Alternative: Use a custom robot SVG icon */
@@ -490,6 +568,19 @@
                     },
                     target: '#n8n-chat'
                 });
+                
+                // Add glitch animation when chat toggle appears
+                setTimeout(() => {
+                    const chatToggle = document.querySelector('#n8n-chat .chat-window-toggle');
+                    if (chatToggle) {
+                        chatToggle.classList.add('chat-glitch');
+                        
+                        // Remove the glitch animation after 0.5 seconds
+                        setTimeout(() => {
+                            chatToggle.classList.remove('chat-glitch');
+                        }, 500);
+                    }
+                }, 100); // Small delay to ensure the element is rendered
             }
             
             // Show the chat widget
