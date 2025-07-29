@@ -26,6 +26,9 @@
     
     <!-- Spline 3D Viewer -->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.37/build/spline-viewer.js"></script>
+    
+    <!-- n8n Chat Widget -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
 </head>
 <body class="bg-[#0B0B1F] text-[#D1D1E9] font-inter">
     <!-- Navbar -->
@@ -46,9 +49,9 @@
             
             <!-- CTA Button -->
             <div class="hidden lg:block">
-                <a href="#contact" class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300">
+                <button class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300">
                     Chat With AI
-                </a>
+                </button>
             </div>
         </div>
         
@@ -88,9 +91,9 @@
                         "Turn obstacles into opportunities with fast and efficient solutions."
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                        <a href="#contact" class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300 glow-effect btn-glitch" data-text="Chat With AI">
+                        <button class="btn bg-gradient-to-r from-[#50C9F2] to-[#8C5FFF] text-white border-0 hover:opacity-90 transition-opacity duration-300 glow-effect btn-glitch" data-text="Chat With AI">
                             Chat With AI
-                        </a>
+                        </button>
                         <a href="#about" class="btn btn-outline border-[#1C1C2E] text-[#D1D1E9] hover:bg-[#1C1C2E] hover:text-[#50C9F2] transition-colors duration-300 btn-glitch" data-text="Explore">
                             Explore
                         </a>
@@ -411,6 +414,63 @@
 
     <!-- Custom JS -->
     <script src="assets/js/main.js?v=1.2"></script>
+    
+    <!-- n8n Chat Widget Initialization -->
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        let chatInstance = null;
+
+        function initializeChat() {
+            if (!chatInstance) {
+                chatInstance = createChat({
+                    webhookUrl: 'https://n8nserver.linov.biz.id/webhook/7004/chat',
+                    mode: 'window',
+                    showWelcomeScreen: true,
+                    defaultLanguage: 'en',
+                    initialMessages: [
+                        'Halo saya Linov AI , ada yang bisa dibantu ?'
+                    ],
+                    i18n: {
+                        en: {
+                            title: '',
+                            subtitle: '',
+                            footer: '',
+                            getStarted: 'Start Chatting',
+                            inputPlaceholder: 'Type your message here...',
+                        },
+                    },
+                    target: '#n8n-chat'
+                });
+            }
+            
+            // Show the chat widget
+            const chatElement = document.querySelector('#n8n-chat');
+            if (chatElement) {
+                chatElement.style.display = 'block';
+            }
+        }
+
+        // Add event listeners to Chat with AI buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create chat container
+            const chatContainer = document.createElement('div');
+            chatContainer.id = 'n8n-chat';
+            chatContainer.style.display = 'none';
+            document.body.appendChild(chatContainer);
+
+            // Select buttons by their text content
+            const allButtons = document.querySelectorAll('button');
+            allButtons.forEach(button => {
+                if (button.textContent.trim() === 'Chat With AI') {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        initializeChat();
+                    });
+                }
+            });
+        });
+    </script>
     
     <!-- Portfolio Mobile Animation Script -->
     <script>
